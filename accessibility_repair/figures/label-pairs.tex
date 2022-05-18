@@ -1,0 +1,23 @@
+\begin{figure}
+    \noindent
+	\begin{minipage}[c]{.97\columnwidth}
+        \centering
+        \begin{lstlisting}[language={JavaScript},frame=ltbr,aboveskip=1.1em,basicstyle={\linespread{0.8}\footnotesize\ttfamily},]		
+{	// associations.json
+	// each entry is xpaths of field -> label 
+
+	".../form/textarea[@id='bx_3978']": 
+			".../form/div[1]/p", // <p>Message</p>
+	
+	".../form/input[@id='vr_9481']": 
+			".../form/section[1]/div[1]/p", // <p>Name</p>
+	
+	".../form/select[@id='frq']": 
+			".../form/section[2]/div[2]/p", // <p>How often ...</p>
+	
+	// remaining elements ...
+}\end{lstlisting}
+    \end{minipage} \hfill
+\caption{Sample of the generated association decisions output (corresponds to \Cref{fig:motivating-example}).}
+    \label{fig:label-pairs}
+\end{figure}

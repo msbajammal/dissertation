@@ -1,0 +1,32 @@
+% !TEX root =  paper.tex
+
+\section{Related Work}
+\label{section:related-work}
+
+\header{Visual analysis}
+There exist a few techniques that analyze web applications from a visual perspective.
+Choudhary et al.~\cite{choudhary2012crosscheck} propose an approach that detects cross-browser compatibility by examining visual differences between the same app running in multiple browsers.
+Burg et al.~\cite{burg2015explaining} present a tool that helps developers understand the behavior of front-end apps. It allows developers to specify which element they are  interested in, then tracks that element for any visual changes and the corresponding code changes.
+Bajammal et al.~\cite{canvas_icst2018} propose an approach to analyze and test web canvas element through visual inference of the state of the canvas and its objects, and allowing canvas elements to be testable using common DOM testing approaches.
+In contrast to our work, none of these studies aims to automatically identify and extract web components. Stocco et al.~\cite{2018-Stocco-FSE, 2018-Leotta-STVR} explore visual techniques for web testing applications, including visual-based test repair and techniques for migrating DOM-based tests to visual tests.
+
+\header{Clone detection}
+There is a large body of work on clone detection 
+in conventional source code~\cite{Roy:2007:CloneSurvey, Roy:2009:ComparisonOfCloneDetectionTechniques, Rattan:2013:CloneDetectionSystematicReview}. Some techniques also exist targeting web artifacts, such as for identifying duplicated content~\cite{Boldyreff:2002:ReverseEngineeringMaintainableWWW} or
+script function clones~\cite{Lanubile:2003:FindingFunctionClones, Calefato:2004:FunctionCloneDetection},
+and quantifying the structural similarity across pages~\cite{DeLucia:2005:UnderstandingClonedPatterns}.
+A number of existing publications~\cite{template_1, template_2, template_3, template_4} propose template identification for Java code by defining a number of heuristics to compute code similarity.
+Rajapakse and Jarzabek~\cite{Rajapakse:2005:AnInvestigationOfCloning} use CCFinder~\cite{Kamiya:2002:CCFinder}
+to identify duplication in web applications.
+Synytskyy et al.~\cite{Synytskyy:2003:ResolutionOfStatic} use an \textit{island grammer} 
+to identify cloned \html forms and tables.
+Cordy et al.~\cite{Cordy:2004:PracticalLanguageIndependent} propose a language-independent technique
+to identify exact/near-miss clones (initially in \html) using island grammars, pretty-printing and textual differencing. 
+Inspired by that work, \nicad clone detector is proposed~\cite{Roy:2008:NiCad}.
+
+\header{Transformation and refactoring}
+Various techniques are proposed to convert static pages to dynamic ones~\cite{Boldyreff:2002:ReverseEngineeringMaintainableWWW, Synytskyy:2003:ResolutionOfStatic}, to 
+generalize dynamic web pages~\cite{Lucia:2004:ReengineeringWeb, Rajapakse:2007:Unifying},
+or to find similar functionalities across web pages~\cite{DeLucia:2005:UnderstandingClonedPatterns}. Other techniques~\cite{mesbah:migrate07} use clustering to group similar static web pages together to extract single-page templates. 
+Pattern mining techniques are used~\cite{Mazinanian:2014:RefactoringCSS, Davood:2016:ASE:CSSMigration, Davood:ICSE:2017:CSSDev} for identifying and refactoring duplicated \css code in web apps.
+In contrast to our work, none of these studies aims at automatically identifying and extracting web components from mockups.

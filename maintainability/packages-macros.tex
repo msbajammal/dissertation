@@ -1,0 +1,118 @@
+% !TEX root =  paper.tex
+
+\usepackage{booktabs}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{enumitem}    
+\usepackage[greek,english]{babel}
+\usepackage{ifthen}
+\usepackage{xspace}
+\usepackage{fancybox}
+\usepackage{marginnote}
+\usepackage{tcolorbox}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{algpseudocode, algorithm, algorithmicx}
+\usepackage{color,soul}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usepackage{cleveref}
+\usepackage{hhline}
+\usepackage{balance}
+
+
+\newboolean{showcomments} 
+\setboolean{showcomments}{true}
+\ifthenelse{\boolean{showcomments}}
+{\newcommand{\nb}[2]{
+		\fbox{\bfseries\sffamily\scriptsize#1}%
+		{\sf\footnotesize$\blacktriangleright$\textcolor{blue}{\hl{#2}}$\blacktriangleleft$}
+	}
+}
+{\newcommand{\nb}[2]{}}
+
+\definecolor{circled-color}{gray}{0.15}
+\newcommand*\circled[1]{\tikz[inner sep=.1ex,baseline=-.75ex] \node[circle,draw,color=white,fill=circled-color] {#1};}
+
+
+\newcommand{\VizElem}{visual element}
+\newcommand{\VE}{VE}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+%\usepackage{mathptmx}
+
+%\let\temp\rmdefault
+%\usepackage{mathpazo}
+%\let\rmdefault\temp
+
+\newcommand\ali[1]{\nb{Ali}{#1}}
+\newcommand\mohammad[1]{\nb{Mohammad}{#1}}
+\newcommand\davood[1]{\nb{Davood}{#1}}
+
+\newcommand{\todo}[1]{\textcolor{magenta}{\nb{TODO:}{#1}}}
+
+%\newcommand{\MyParagraph}[1]{\par\smallskip\noindent\textbf{#1}}
+
+\newcommand{\header}[1]{\par\vspace{-1mm}\medskip\noindent\textbf{#1.}}
+
+\newcommand{\hide}[1]{}
+
+\newcommand{\code}[1]{\texttt{\fontsize{9.5}{11}\selectfont #1}}
+\newcommand{\smcode}[1]{\texttt{\fontsize{7.5}{8}\selectfont #1}}
+
+\definecolor{findingsbox-bg-color}{gray}{0.90}
+\newtcbox{\findingsbox}{colback=findingsbox-bg-color, boxrule=0.2pt, arc=2pt, boxsep=0pt, left=5pt, right=5pt, top=5pt, bottom=5pt}
+\newcommand{\findings}[2] {
+	\vspace{5pt}
+	\noindent
+	\findingsbox{
+		\begin{minipage}{.95\linewidth}
+			\textbf{#1}: #2
+		\end{minipage}
+	}
+}
+
+\newtheorem{defn}{Definition}
+
+% Define tool names, etc. here
+\newcommand{\html}{\textsc{HTML}\xspace}
+\newcommand{\css}{\textsc{CSS}\xspace}
+\newcommand{\javascript}{\textsc{JavaScript}\xspace}
+\newcommand{\react}{\textsc{React}\xspace}
+\newcommand{\angular}{\textsc{Angular}\xspace}
+\newcommand{\nicad}{\textsc{NiCad}\xspace}
+\newcommand{\xpath}{\textsc{XPath}\xspace}
+\newcommand{\dom}{\textsc{DOM}\xspace}
+\newcommand{\cssdev}{\textsc{CSSDev}\xspace}
+
+\newcommand{\model}{Component Intermediate Model\xspace}
+\newcommand{\mappedset}{Mapping Nodes Set\xspace}
+
+\newcommand{\toolname}{\textsc{VizMod}\xspace}
+
+%\newcommand{\numberOfEmails}{\hl{X}\xspace}
+\newcommand{\numberOfTemplates}{five\xspace}
+\newcommand{\numberOfParticipants}{five\xspace}
+\newcommand{\numberOfComponents}{25\xspace}
+\newcommand{\totalNumberOfComponentInstances}{120\xspace}
+\newcommand{\precision}{94\%\xspace}
+\newcommand{\recall}{75\%\xspace}
+\newcommand{\sizeReductionMin}{6.01\%\xspace}
+\newcommand{\sizeReductionmax}{19.34\%\xspace}
+
+
+
+
+% These are used for the rebuttal 
+\newboolean{showreviewhints} 
+\setboolean{showreviewhints}{true}
+\ifthenelse{\boolean{showreviewhints}}{
+\definecolor{reviewcolor}{RGB}{0,0,255}
+	\newcommand{\revised}[2]{\setlength{\marginparwidth}{1.05cm}\marginnote{\color{reviewcolor}{\fbox{\parbox{\dimexpr\linewidth-1\fboxsep-2\fboxrule}{#2}}}}{\color{reviewcolor}{#1}}}
+}
+{\newcommand{\revised}[2]{#1}}

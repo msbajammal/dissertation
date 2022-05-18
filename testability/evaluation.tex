@@ -1,0 +1,72 @@
+% !TEX root =  paper.tex
+
+\section{Evaluation}\label{sec:evaluation}
+
+In order to assess the accuracy and effectiveness of \tool, we examine the following research questions:
+
+\begin{description}
+\item[RQ1:] How accurate is \tool in visually inferring canvas elements and their properties?
+
+\item[RQ2:]  How effective is \tool in detecting faults in canvas elements?
+\end{description}
+
+\subsection{Subject Applications}\label{sec:subjects}
+Our main criterion for selecting subject applications was the central role of canvas elements in the function of the application. 
+More specifically, the applications should either be entirely canvas-based, or use canvas elements as the main and central display of information. The rationale for this criterion is that we found 
+some instances were the subject was not a canvas-based application, 
+but rather only used small (e.g., icon-sized) canvas elements to display icons, and therefore this does not represent a canvas element that is rich and complex enough to be fairly included in the evaluation. We note that our approach is agnostic to the rest of the web application and can therefore process a single canvas element on its own or canvases that are central displays of the entire application.
+Using this selection criterion, we were able to collect five open-source applications that use canvas elements. A list of these applications is shown in Table \ref{table:eval-apps}. As can be seen in the list, the applications cover a variety of sizes, ranging from between 7,200--105,000 lines of code. The applications cover a variety of domains, including graphics, medicine, chemistry, and music.
+
+\begin{table}[b]
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{0.9}
+\centering
+\caption{List of web applications used for evaluation}
+\begin{tabular}{llr}
+\toprule
+\textbf{Application} &  \textbf{Description}  &  \textbf{LOC}  \\
+\midrule
+JBrowse~\cite{eval_app_jbrowse} & Genome browsing and visualization & 105,427 \\
+Reactome~\cite{eval_app_reactome} & Reactions analysis & 27,702 \\
+Scribl~\cite{eval_app_scribl} & Genetics analysis & 20,939 \\
+Gibberish~\cite{eval_app_gibberish} & Music composition and production & 14,884 \\
+iCanplot~\cite{eval_app_icanplot} & Data plotting and visualization & 7,269 \\
+
+%&                        &                 & \bf{\# tested} \\ 
+%&  \textbf{Description}  &  \textbf{LOC}   & \bf{canvases}  \\
+%\midrule
+
+\bottomrule
+\end{tabular}
+\label{table:eval-apps}
+\end{table}
+
+\subsection{Experimental Procedure}
+\label{sec:experimental-procedure}
+\head{Accuracy: RQ1}
+Through RQ1, we aim to evaluate the accuracy of \tool in visually inferring objects from the canvas. This is important in order to ensure  the inferred augmented canvas DOM exhibits a faithful representation the visual canvas.
+To this end, for each subject application, we collect a random sample of 10 canvas screenshots, for a total of 50 screenshots of canvases from the 5 subject applications. Before the screenshots of the canvases are taken, the code temporarily makes all non-canvas elements invisible, such as advertisement boxes or other superimposed areas, in order to make sure that the snapshot is specific to the canvas element. We also note that the number of canvas elements is not that same for all subject applications, or at different points throughout the use of the same application. As such, when conducting the evaluation, by temporarily hiding all non-canvas elements the screenshot is taken from the page without specifying the canvas element. In a production environment, the developer would of course have the option, if needed, to specify which element to test. 
+
+We then generate the augmented canvas DOM for each collected canvas screenshot. Subsequently, we recreate a canvas by rendering an image from the structure and properties in the augmented canvas DOM. Finally, we compare the similarity between the snapshot of the original visual canvas element, and the canvas image created from the augmented canvas DOM.
+
+We compute the accuracy as a normalized root-mean-square (RMS) error $\Delta E$ in order to obtain a normalized similarity score to enable comparison across subjects. This accuracy measures the pixel-by-pixel similarity between $C_O$, the original canvas screenshot image, and $C_{DOM}$, the canvas image reconstructed from the augmented DOM. We compute this accuracy measure as follows:
+\begin{align}
+\label{eqn:eval-RQ1}
+\Delta E = 1 - \frac{\sqrt{ \frac{1}{n} \sum {\left( C_{DOM} - C_O \right)}^2 }}{\Vert \left( C_{DOM} - C_O \right) \Vert_2}
+\end{align}
+a $\Delta E$ value of 1.0 (i.e., 100\%) indicate high accuracy (an identical match), while lower values indicate lower accuracy. 
+
+\head{Effectiveness: RQ2}
+The objective for addressing RQ2 is to assess the effectiveness of the tool in terms of its fault detection ability. To this end, for each collected canvas screenshot, we run \tool to infer the augmented canvas DOM. Subsequently, we inject random modifications into these canvas screenshots and generate another augmented canvas DOM. This process would therefore yield two DOMs: an original pre-injection DOM, and a post-injection DOM.
+
+The fault injections take the form of injecting a random shape with a random set of points and random attributes (e.g., color, size, etc) directly on the canvas screenshot. The rationale for this fault injection model is to have the same degree of randomness across all evaluated applications, which can be difficult to ensure due to the following factors. First, the API of each subject application has varying degrees of being able to mutate the final visual state of the canvas. For example, some allow direct modification of the final visual content on the canvas, while for other applications the API allows only one or two properties to be changed. Furthermore, 
+from a more practical point of view, we do not have access to the objects on the canvas due to the lack of observable state in the canvas, which is the very problem that our approach is trying to solve. Accordingly, due to absence of access to canvas objects, simulating a fault of removing a certain object is not practically achievable. Finally, the percentage of code contributing to the canvas visual state varies across subject applications. In other words, some applications have a large core of business logic code relative to only a small part of codebase for canvas drawing, while for other applications the code is almost purely visual code for canvas drawing. Accordingly, these differences add a confounding factor to the evaluation and skew the accuracy in different applications relative to others. We therefore adopt the fault injection approach outlined above in order to have a more unbiased evaluation.  
+
+We therefore proceed as follows. We begin with the 50 canvas screenshots collected from the 5 subject applications. For each screenshot, we perform two injection runs, with one automatic random injection per run. Therefore, we end up with a total of 100 random injections for the 50 canvas screenshots collected from the 5 subjects.
+
+The fault detection performance is then measured using the Jaro-Winkler~\cite{winkler2006overview} similarity $\Delta S$ between the pre-injection DOM and post-injection DOM. We chose this metric because it provides a normalized score, which would facilitate comparison and reasoning about results. For the purposes of this evaluation, we use the DOM instead of test assertions for two reasons. First, the DOM is the source against which any assertions are made, whether automatically or manually-written (as explained in section \ref{subsec:testing-using-dom}). We therefore evaluate the fault detection performance more accurately by checking the source DOM itself. Second, using a canvas assertion for this evaluation would introduce a bias as it requires a subjective human evaluation of whether a true positive or false positive actually occurred (e.g. does this object actually look bigger than before?). For these reasons, we perform a direct DOM distance comparison to avoid these biases and conduct a more accurate quantitative evaluation. We note that we are only able to perform this step after 
+having evaluated that the generated DOM itself does faithfully 
+capture the canvas state, and therefore the DOM distance comparison in this second stage of fault detection would faithfully capture incomplete or wrong canvas states.   
+
+Accordingly, we define a true positive result and a false negative result using the Jaro-Winkler similarity $\Delta S$ between the pre- and post-injection DOMs. A true positive is defined as the case when the tool detects the injection. A false negative is defined as the case when it does not detect the injection. A false negative corresponds to $\Delta S \equiv 1$, where the pre- and post-injection DOMs are identical. Alternatively, a true positive corresponds to $\Delta S < 1$, where a difference was detected between the DOMs.
+

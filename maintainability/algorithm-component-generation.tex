@@ -1,0 +1,53 @@
+% !TEX root =  paper.tex
+
+\begin{algorithmic}[1]
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\Require \par ~ The original \dom of the mockup ($DOM_{original}$),
+UI component instances \dom subtrees ($subtrees$), 
+UI component translation strategy ($strategy$)
+
+\Ensure The new \dom after refactoring ($DOM_{refactored}$)
+
+
+\State $model \gets \Call{ConstructEmptyIntermediateModel}{{}}$ \label{algoline:ui-component-empty-model}
+\State $coveredNodes \gets \varnothing$ \label{algoline:ui-component-covered-nodes-init}
+\State $templateTree \gets \Call{getSmallestTree}{subtrees}$ \label{algoline:ui-component-template-tree}
+\State $templateNodes \gets \Call{BFS}{templateTree}$
+\For{$templateNode \in templateNodes \setminus coveredNodes$} \label{algoline:ui-component-main-loop-start}
+	\State $coveredNodes \gets coveredNodes \cup \{ templateNode \}$
+	\State $mappedNodes \gets \Call{getMappedNodesSet}{templateNode, subtrees}$\label{algoline:ui-component-mapped-nodes-set}
+	\State $parameterization \gets \code{NULL}$
+	\For{$currentNode \in mappedNodes \setminus coveredNodes $}
+		\State $parameterization \gets \Call{compare}{templateNode,currentNode}$\label{algoline:ui-component-compare}
+		\If{$parameterization \neq \code{NULL}$}
+			\State \textbf{break} \label{algoline:ui-component-break}
+		\EndIf
+	\EndFor
+	
+	\State $parent \gets model.\Call{getModelNodeFor}{templateNode.parent}$\label{algoline:ui-component-add-model-nodes-start}
+	
+	\If{$parameterization \neq \code{NULL}$}
+		\If{$parameterization = \code{SOFT\_PARAMETERIZATION}$ \par 
+			\hspace{15mm} $\land strategy.\Call{supportsAttributeParameters}{{}}$}
+			\State $model.\Call{addSoftParamNode}{parent, mappedNedesSet}$
+			\State $coveredNodes \gets coveredNodes \cup mappedNodes$
+		\Else
+			\State $model.\Call{addHardParamNode}{parent, mappedNedesSet}$
+			\State $coveredNodes \gets coveredNodes \cup $ \par 
+				\hspace{20mm} $\Call{GetAllSubtreeNodes}{mappedNodes}$
+		\EndIf
+	\Else
+		\State $model.\Call{addNonParamNode}{parent, mappedNedesSet}$
+		\State $coveredNodes \gets coveredNodes \cup mappedNodes$
+	\EndIf \label{algoline:ui-component-add-model-nodes-end}
+
+\EndFor \label{algoline:ui-component-main-loop-end}
+	
+
+\State $DOM_{refactored} \gets strategy.\Call{refactor}{DOM_{original}, model}$ \label{algoline:ui-component-refactor}
+
+
+\end{algorithmic}

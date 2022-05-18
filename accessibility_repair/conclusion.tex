@@ -1,0 +1,22 @@
+\section{Conclusion}
+
+Filling web forms is a key activity when browsing the web. 
+While this task is routine for sighted users, 
+it presents a significant hurdle for non-sighted users if the form does not 
+contain the required DOM accessibility labeling markup. This 
+issue of missing labeling markup is one of the most common accessibility 
+errors. However, 
+when a non-sighted user is faced with missing form labeling, 
+there are currently little to no options available to access 
+that form. To this end, this chapter proposed a software analysis approach 
+that automatically analyzes web forms and infers their labels to make them accessible. 
+The approach first abstracts a given web form, then generates 
+visual cues from the form. These cues are then used in an optimization 
+model to solve for the form labeling associations. These are 
+finally translated into standard ARIA accessibility markups and augmented into 
+the DOM to repair the form and make it accessible. 
+We evaluated our approach on 30 real-world subjects 
+and assessed the accuracy of labeling inference, the safety of 
+the DOM augmentation repairs, as well as the labeling performance. 
+The results show an average F1-measure of 88.4\% for label 
+inference, and an average run-time of around 1.6 seconds.

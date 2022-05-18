@@ -1,0 +1,53 @@
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = diss.tex
+
+\chapter{Abstract}
+
+Non-functional software properties capture qualitative and generic aspects about software. 
+Such aspects are often high level and more semantic compared to the more precise and quantitative functional properties or requirements, and therefore have been more difficult 
+to analyze and automate.  
+A scarcely explored, and potentially useful, alternative 
+paradigm is the adoption of what might be referred to as a visual analysis 
+approach to software engineering, which involves extracting or analyzing 
+visual information pertaining to the software, with the 
+objective of addressing software engineering problems.  
+
+The goal of the work presented in this dissertation is to improve 
+non-functional web UI properties using automated visual analysis. 
+We focus on particular problems of testability, accessibility, and maintainability 
+because they have not been amenable to automation so far.  
+First, we improve testability by converting the inherently non-testable 
+web canvas elements into testable ones. 
+The automated technique is based on visually analyzing the structure and  
+properties of the canvas contents, then augmenting them 
+into the canvas element to make it testable. 
+Then, we propose an approach to test semantic accessibility.
+It is based on visually analyzing various regions of the page and then inferring 
+any associated semantic roles, after which the UI markup is examined to 
+assert the presence of the roles. 
+Next, we introduce an automated technique for addressing the common problem 
+of inaccessible web form labeling. 
+It is based on constructing visual cues from the form, 
+then solving for the optimal labeling associations, which are finally augmented 
+into the inaccessible web forms to make them accessible. 
+Finally, we present a UI component generation technique to improve maintainability. 
+The technique first detects visual patterns in the UI, then combines subsets of these 
+patterns into a shared template, which is finally formulated as a UI component.  
+Our evaluations show that the proposed techniques are able to carry the inferences, 
+analyses, and tests in an accurate and effective manner.  
+
+
+
+%\ifgpscopy
+%  This document was typeset in \texttt{gpscopy} mode.
+%\else
+%  This document was typeset in non-\texttt{gpscopy} mode.
+%\fi
+
+% Consider placing version information if you circulate multiple drafts
+%\vfill
+%\begin{center}
+%\begin{sf}
+%\fbox{Revision: \today}
+%\end{sf}
+%\end{center}

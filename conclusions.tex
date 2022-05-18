@@ -1,0 +1,277 @@
+%%!TEX root = diss.tex
+
+\let\oldaddcontentsline\addcontentsline
+\newcommand{\stoptocentries}{\renewcommand{\addcontentsline}[3]{}}
+\newcommand{\starttocentries}{\let\addcontentsline\oldaddcontentsline}
+
+\chapter{Concluding Remarks}
+\label{chp:conclusions}
+
+Building web UIs requires significant effort and time. Much of the state-of-the-art research on web UIs has typically revolved around  analyzing the source code. 
+While this approach has its uses and benefits, it is often not suitable for addressing non-functional properties, such as testability, accessibility, and 
+maintainability. These aspects, while important, are generic and qualitative in nature compared to the more common functional properties or requirements which are precise and exact.  
+Non-functional aspects therefore often require a high-level qualitative analysis which has made them less amenable to effective automation. Accordingly, analyzing or assessing 
+such non-functional properties has often remained a laborious task that has to be done manually. 
+
+
+\section{Contributions}
+In this dissertation, we introduced novel techniques for automating 
+the analysis and testing of non-functional web UI properties (testability, accessibility, and maintainability) using visual 
+approaches. 
+\Cref{tbl:summary-table} shows a summary of the contributions and the addressed research problems. 
+The main contributions of this dissertation are as follows:
+\begin{itemize}
+	\item An approach, in \autoref{chp:testability}, that improves the testability 
+	of web UI by converting the non-testable canvas elements into testable ones. 
+	We presented a visual analysis technique that infers the objects, properties, 
+	and arrangements of the canvas element's content, then augments the inferred 
+	information into the DOM in order to make the canvas testable. 
+	The evaluation points to a high accuracy of inferring the contents of the 
+	canvas, and an effective detection of visual faults on the canvas. 
+	
+	\item An automated technique that tests the semantic accessibility of web UIs, 
+	discussed in \autoref{chp:accessibility_testing}. The technique conducts 
+	a visual inference process to determine the semantic roles of various regions, 
+	then asserts that the UI's markup has explicitly expressed the visually inferred 
+	roles. The evaluation indicates high accuracy of detecting semantic groupings 
+	and inferring their semantic roles, as well as detecting both injected faults and 
+	real-world faults in test subjects. 
+	
+	\item An approach for automated repair of inaccessible web form labeling,  which is 
+	one of the most common causes for web inaccessibility. The approach, described in \autoref{chp:accessibility_repair}, is based on constructing a set of visual cues 
+	and then using them in formulating an optimization problem, the solution of which is 
+	applied to repair to the DOM. The evaluation shows that the DOM repair is conducted 
+	in a safe and effective manner, with a high accuracy of inferring labeling associations, 
+	and is sufficiently scalable for real-time usage.
+	
+	\item A technique that enhances the maintainability of web UI by automating 
+	some of the laborious steps of creating web components, which are one of the most common ways of creating maintainable UIs. The approach 
+	is based on analyzing abstract visual repetition trends, then combining them into reusable 
+	web templates, as described in \autoref{chp:maintainability}. The evaluation points to 
+	an effective capture of repetitions in the UI, which achieved a high level of code reusability.
+	
+	\item A peer-reviewed systematic survey on the use of visual analysis in software engineering, 
+	which is the first to investigate this analysis paradigm. The goal of this work is to conduct a survey to 
+	help structure, curate, and unify the dispersed literature in this research area, and to analyze how visual techniques have been used in software engineering, and what are the challenges reported when they were used.  
+\end{itemize}
+
+\input{summary-table}
+
+
+
+
+\section{Research Questions Revisited}
+The research questions of this dissertation were introduced in \autoref{chp:intro}. 
+The questions were then investigated in the subsequent chapters (Chapter 2-6). 
+We revisit each research question below and provide concluding remarks. 
+
+\ \\ 
+\textbf{Research Question A} \\
+\textit{What areas of software engineering have benefited from visual analysis 
+	and how?}
+\\ 
+
+A recent, but scarcely explored, paradigm in software engineering research is to 
+adopt a visual perspective of analyzing the software, which entails extracting and processing 
+visual artifacts relevant to the software. To gain a 
+better understanding of this trend, in this research question we surveyed the 
+literature on the use of visual approaches in software engineering, as explored in  \autoref{chp:survey}. 
+From an initial pool of
+2,716 publications, we systematically obtained 66 papers and analyzed them according to a number of research dimensions (i.e., research area, technique, rationale). Our study revealed that visual techniques have been utilized most frequently in the software testing field. More specifically, most of the existing works utilizing visual analysis were in the research area of cross-browser testing, where the goal is to check whether or not a given app functions the same across browsers. %, was the focus of the great majority of papers. 
+These often use simple visual techniques such as screenshot differencing, which provides a simple measure of UI similarity between two browsers. 
+Finally, our findings show that there has been little to no exploration of non-functional properties from a visual perspective, and therefore there is a research opportunity to explore such topics. 
+
+
+
+\ \\ 
+\textbf{Research Question B} \\
+\textit{How can we make untestable web UI canvas elements testable through visual 
+	analysis?
+}
+\\ 
+
+Web applications based on canvas elements allow the creation of dynamic graphics, 
+interactive user interfaces, and scalable visualizations. However, there has been 
+little to no research in literature in terms of testing canvas elements. In investigating 
+this research question, we proposed a testing approach, discussed in \autoref{chp:testability}, based 
+on visual analysis of the screenshot of canvas elements in order to identify it structure 
+and content, followed by generating an augmented DOM tree for the canvas element to allow making test assertions on it.
+We evaluated the accuracy of the proposed approach and its
+effectiveness in detecting faults injected in canvas elements.
+We found the inference process is able to reliably 
+detect visual faults in canvases and infer its contents. These results indicate that, by visually deconstructing 
+the content of the canvas and their properties, the canvas can be made testable. 
+
+
+\ \\ 
+\textbf{Research Question C} \\
+\textit{How can we visually test the semantic accessibility of web UI?}
+\\ 
+
+In this research question, we introduced 
+an approach that automates web accessibility testing from a
+semantic perspective, as described in \autoref{chp:accessibility_testing}. 
+While some tools exist to perform basic forms of accessibility
+checks, they focus on syntactic checks, as opposed to checking
+the more critical high level semantic accessibility features that
+users with disabilities rely on. 
+The proposed approach in this research question analyzes web pages using a combination of visual cues, and infers the semantic groupings present in the page and their semantic roles. It then asserts
+whether the page’s markup matches the inferred semantics. We
+evaluated our approach on real-world websites and assessed
+the accuracy of semantic inference as well as its ability to
+detect accessibility failures. The results show, on average, an
+F-measure of 87\% for inferring semantic groupings, and an
+accessibility failures detection accuracy of 85\%.
+
+
+
+\ \\ 
+\textbf{Research Question D} \\
+\textit{Can we automatically repair the accessibility of web UI forms through 
+	visual analysis?}
+\\ 
+
+Filling web forms is a key activity while browsing the web. While this
+task can be easily completed by sighted users, it is a significant
+hurdle for non-sighted users if the form does not contain the required accessibility labeling. This issue of missing form labeling is consistently one of the top three most common web accessibility
+issues. Unfortunately, however, when a non-sighted user is faced
+with a non-accessible form, there are currently little to no options
+available to access that form. To this end, in this research question, we introduced an approach that automatically analyzes web forms and makes them accessible. The approach first abstracts a given web form, then generates visual cues from the form, in an effort to emulate how sighted users would visually perceive the form. The visual cues are then used in a constrained binary optimization program to solve for the form labeling associations. These are finally translated into standard ARIA accessibility markups and augmented into the DOM to repair the form and make it accessible. We evaluated our approach on real-world subjects and assessed the accuracy of labeling inference, the safety of the DOM augmentation repairs, as well as the labeling performance. The results show an average F1-measure of 88.1\% for label inference, and an average run-time of around 1240 milliseconds.
+
+
+
+\ \\ 
+\textbf{Research Question E} \\
+\textit{How can we generate reusable web UI components through visual analysis?
+}
+\\ 
+
+The development of a web app front-end involves multiple stakeholders, 
+chief among them the graphics designer and web developer. A UI mockup 
+designed by the graphics designer has to be analyzed and processed by 
+a web developer in order create the app’s front-end code, a task that 
+is laborious and involves manual time consuming steps. In this research 
+question, we introduced an approach to
+automate this aspect of web development by generating reusable
+web components from a mockup. The approach is based on detecting 
+visual patterns on the mockup, then combining them into components. 
+The evaluation on real-world web subjects indicates that an average 
+F1-score of 77.4\% in terms of agreement with the developers’ manual selection, 
+performs the refactorings in a correct manner, and the components
+achieve a 22\% code reusability, on average.
+
+\section{Reflections and Future Directions}
+In this dissertation, we took a first step towards using visual analysis for 
+improving non-functional web UI properties. More specifically, the techniques 
+we introduced have converted untestable elements into testable ones, tested 
+the semantic accessibility of web UI, augmented inaccessible web forms into 
+accessible ones, and automatically generated reusable web UI components. 
+However, there still remains many avenues for future work.
+
+
+\stoptocentries
+
+\subsection{Other non-functional aspects} 
+
+{\textbf{Usability}.} 
+Our research has shown that visual analysis is effective for testing accessibility issues. 
+There are other non-functional aspects, however, that would likely benefit from a similar 
+qualitative and high-level visual analysis. A potential research direction is to therefore 
+investigate the use of visual analysis for other important non-functional properties such 
+usability. Usability has become a key differentiating factor between different software 
+products, with significant industrial interest in perfecting the user experience. This resulted in a growing demand for techniques that can assist with this aspect of development. 
+Our research has shown that visual analysis is 
+effective for accessibility issues, which are similar to usability in the sense that they require a qualitative high-level analysis.  
+Accordingly, we foresee that usability issues can be captured and measured using visual analysis. For instance, an example of usability guideline is  providing users with a response to each action. This guideline could be tested, for instance, by asserting the presence of visual updates or indicators after clicking on various UI objects in an app. If there is a lack of visual updates or indicators after the action, then this would be flagged as usability issue and reported to developers.  
+
+
+{\textbf{Performance}}
+There is also the potential to explore the performance of UI from a visual analysis 
+perspective. Instead of separately measuring each component (e.g., network lag, backend 
+processing), measuring it from a visual perspective would give the most realistic measure 
+of performance. This might involve, for instance, detecting visual screen transitions 
+and recording relevant durations. Such an approach would therefore mimic how end users 
+perceive the performance of a UI, which would potentially yield more accurate measures of 
+any lag or performance degradation experienced by the end user.    
+
+{\textbf{Accessibility platform}.} 
+Another possible research direction is to create a modular framework that can adapt 
+to various accessibility rules. While our research took a first step in the direction 
+of automating some of the more pressing accessibility issues, there is definitely 
+room to explore the other accessibility rules and guidelines. Current, legally accepted, 
+accessibility guidelines often contain hundreds of rules at varying levels of granularity 
+and abstraction. We foresee the potential to create a modular engine that allows 
+different accessibility rules to be expressed in a standard and generic format. 
+This can help, for instance, in building a developer community around a common analysis 
+engine and therefore help automate a greater portion of accessibility requirements. 
+The research challenge, however, is to design a framework that is flexible and adaptable 
+enough to be able to capture a wide variety of accessibility rules. 
+
+{\textbf{Alternative maintainability approaches}.} 
+Another potential avenue is to explore other approaches to improve maintainability. 
+Our research has shown that visual analysis can effectively detect patterns in a UI and 
+create reusable components to improve maintainability. We believe 
+there is a potential to explore other aspects of maintainability in the same manner. 
+For instance, we foresee that it can be useful to visually analyze UIs with the goal of removing or trimming down unnecessary markups and styles. This might be achieved in an automated fashion through iterative visual analysis by measuring, for instance, the impact of removing various pieces of markup and styles 
+in order to ensure that they do not impact the UI visually. 
+Another option would be to even predict that impact through a machine learning model that uses visual features, and then using the model as a tool during development and testing. 
+These UI trimming approaches would have the benefit of reducing the execution runtime, the network traffic, and the size of the code base in order to make the UI code smaller and easier to maintain.  
+
+
+\stoptocentries
+\subsection{Other topics}
+
+{\textbf{Alternative platforms}.} 
+In this dissertation, we addressed research problems for web applications. 
+However, we foresee a potential for future work in other emerging platforms, 
+such as virtual reality. For more traditional platforms, such as web, mobile, 
+and desktop, visual analysis is relatively similar since they are all based 
+on having common GUIs and elements. While the underlying technology implementations for these platforms might be different (e.g., XML instead of HTML, SVG instead of Canvas), they are still made of GUI elements, and therefore would have a similar visual analysis approach. For instance, the canvas analysis work that we have conducted can also be used with SVG elements, but it would not be needed in most cases 
+since SVG elements already have a state representation and can be directly tested. 
+The visual analysis process itself, however, is still applicable, and therefore can be used if the need arises for it. 
+On the other hand, the techniques in this dissertation can not readily address the emerging virtual reality applications due to a number research challenges. These applications often have very rich visual interactions and details. 
+Analyzing and testing them is more complex compared to web apps  
+due to a number of factors, such as having new modalities of display (e.g., head-mounted displays) and input (e.g., spatial controllers), as well as the additional third dimension and the higher level of visual complexity. 
+Analyzing and testing such applications would therefore require 
+being able to handle the resulting explosion of the event space (e.g., combination of controller orientations and gestures) and state space (e.g., various angles and views), as well as having features that can capture the increased visual complexity (e.g., additional dimensions, complex free-form objects). These can then be 
+tracked across temporal sequences of states in order to, for instance, test or analyze movements in the virtual space. 
+
+{\textbf{Deep learning}.} 
+%Deep learning has been used in all areas of software engineering, from early design stages, 
+%all the way to deployment and maintenance. 
+%We foresee a continuation of this trend and
+We expect that there will be more techniques that use deep learning to analyze visual aspects of software. 
+This is because as the software analysis task being addressed gets more complex (e.g., harder to automate), it would likely require collecting and analyzing 
+a large set of features that may not be easily determined from the outset, and therefore using a deep learning approach would reduce the effort required for feature selection. 
+In our work, we have used a convolutional neural network in order to help with determining the accessibility roles of regions on the page. 
+Many more venues for future work are possible. 
+For instance, one possible line of work might involve building learning models for recognizing basic UI aspects such menus.  
+This information about the presence of a menu and its individual items can then be used for various analysis or testing tasks, such as devising app exploration  strategies that take into account the menu structure and content. Another potential research avenue is to learn models that can classify or categorize different types of user interfaces (e.g., login, settings). These can then be used to optimize the testing of an application by learning which pattern of test inputs are associated with what type of user interface, or can be also used in state abstraction and model building. These are certainly only a couple of examples, and the potential areas of applying deep learning are practically unlimited.  
+ 
+{\textbf{Games, animations, and complex visuals}.} 
+Web applications are typically composed of GUI elements (e.g., buttons, menus), whereas other applications such as games and animations are much more visually rich and complex. 
+The analysis we conducted in this dissertation was limited to web applications, and therefore the visual features (e.g., colors, shapes, locations) were two dimensional and static in nature. This is a limitation of our approach, however, when working with games and animations. Such applications would require extrapolating the features to three dimensions and shapes and objects of generic complexity, and then  subsequently tracking and recording each feature across a temporal series of states in order to analyze the animation. However, we do point out that most games and animations do not perform the rendering on their own, but rather rely on common, industry-standard, rendering engines (e.g., Unity). Accordingly, visual analysis and testing would likely be of interest to the 
+developers of such engines to a greater degree than developers of games and animations. This is because engine developers are the ones who are concerned with making sure that each particular rendering 
+function correctly performs the rendering as visually expected. 
+While developers of games and animations do also need some form of visual testing, they will likely focus on more higher-level aspects, such as asserting particular states or game logic elements, more than the low-level rendering accuracy. Even such high-level testing would likely have its own challenges, since the event and state space of games and animations is much larger than typical web applications. 
+Handling the large state space would likely require researching appropriate abstraction strategies in order to simplify the state space and prune unnecessary details, and such abstraction 
+will likely be application and task-specific. 
+\hl{
+Furthermore, the goal of the canvas testability work in this dissertation is to provide developers with the fundamental capability of observing the canvas state and making assertions on it. However, it does not provide a complete testing solution, but rather make it \emph{possible} to perform the testing process itself, thereby improving testability. As part of future work, a more through canvas testing solution can be provided such that 
+it will cover more complex and resizable canvas elements, and generate the tests in a fashion that developers might prefer (e.g., using relative positioning in assertions). 
+}
+
+{\textbf{Functional aspects}.} 
+The work in this dissertation has focused on particular problems in non-functional analysis 
+because they have not been amenable to automation and have received little attention so far. 
+On the other hand, functional aspects have been more thoroughly researched and the earliest usage 
+of visual analysis was to address functional aspects, such as regression testing of web UIs. 
+We therefore expect functional aspects to continue being the most common application for visual analysis. 
+However, we expect that potential future work would likely involve the use of more fine-grained visual analysis instead of direct image diffing, which is currently the most commonly used technique. This is because the fine-grained analysis would operate at the level of finer features of the user interface instead of the image as a whole, and therefore would potentially provide more accurate and robust results when conducting, for instance, regression testing or specifying oracles. In general, however, the nature of the functional testing 
+would remain the same, in the sense that inputs are generated and certain aspects of the user 
+interface are asserted. 
+Nonetheless, as explored and demonstrated in this dissertation, it is the non-functional properties that have been least explored and therefore would benefit from new techniques that could advance state-of-the-art. 
+
+
+\starttocentries
+

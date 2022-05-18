@@ -1,0 +1,148 @@
+% !TEX root =  manuscript.tex
+\subsection{Evaluation and Challenges (RQ4)}
+
+
+\header{Evaluation Methods}
+
+We systematically studied the selected papers to 
+understand the most common methods used for 
+evaluating the proposed visual approaches.
+\Cref{table:evaluation-techniques} (Evaluation 
+Methods) depicts the results: the evaluation 
+methods presented are not necessarily disjoint,
+since one technique can for instance be evaluated 
+with respect to its performance (i.e., running time), 
+and its accuracy calculated by the judgment of human participants.
+
+In more than half of the works (53\%), the 
+evaluation methods were performed using 
+wide-spread effectiveness assessment 
+measures such as precision and recall
+~\cite{Choudhary-2010-ICSM, Choudhary-2012-ICST, 
+Choudhary-2013-ICSE, Lin-2014-TSE, Nguyen-2015-ASE, 
+Mahajan-2015-ICST, Hori-2015-SEKE, Feng-2016-ASE, 
+Patric-2016-ASE, Wan-2017-STVR, He-2016-ICWS, 
+Bao-2017-EMSE, Chen-2017-IUI, Reiss-2018-ASEj, 
+Kirac-2018-JSS, canvas_icst2018, Kuchta-2018-EMSE, 
+Xu-2018-TOIT}.
+
+Another significant body of work measured 
+the manual effort saved by the visual approach 
+with respect to the humanly performed 
+task~\cite{Delamaro-2011-STVR, Li-2010-CHI, 
+Li-2010-CHI, Semenenko-2013-ICSM, Mahajan-2015-ICST, 
+Feng-2016-ASE, Chen-2017-IUI, Leotta-2018-STVR, 
+Reiss-2018-ASEj}. 
+Moreover, several works also evaluated the 
+performance of the proposed approaches, 
+usually measuring the running time on common 
+developer platforms (i.e., mid-level 
+notebooks)~\cite{Nguyen-2015-ASE, Selay-2014-DICTA, 
+Hori-2015-SEKE, Patric-2016-ASE, Wan-2017-STVR, 
+Bao-2017-EMSE, Reiss-2018-ASEj, Kirac-2018-JSS}.
+
+Performance is potentially considered as 
+important as the accuracy because image analysis 
+techniques are deemed as being computationally 
+expensive. Thus, their application and use must 
+carefully evaluate the overhead imposed by 
+these visual approaches over the most general 
+SE tool being developed. Initially, this might 
+not favor their adoption if compared to other 
+less computationally-intensive approaches.
+However, the authors report that the time 
+taken by their proposed techniques are all 
+reasonable in common processing environments, 
+suggesting that execution time should not be 
+considered as a deterrent decision criterion when 
+adopting a visual approach to support a SE task.
+
+In several works, the human expertise was used to 
+assess the output of the visual 
+techniques~\cite{Mahajan-2015-ICST, Hori-2015-SEKE, 
+Mahajan-2016-ICST, Kuchta-2018-EMSE, Xu-2018-TOIT, 
+Ponzanelli-2016-ICSE, Choudhary-2010-ICSM, 
+Choudhary-2012-ICST, Choudhary-2013-ICSE}.
+As an example, \citet{Mahajan-2015-ICST} examine 
+the efficacy of WebSee (a tool that identifies 
+presentational failures in HTML pages)
+through manual investigation of its output
+when it is executed on 253 automatically-generated 
+test cases.
+This is done to see whether WebSee is able to 
+correctly identify the faulty HTML elements
+seeded when generating the test cases.
+While we were expecting more human judgment 
+involved in the evaluation of the selected papers, 
+its application depends largely on the context 
+and the problem being solved. 
+
+Four works do not propose a quantitative empirical 
+evaluation of the proposed technique, but 
+rather present them by means of use cases.
+A closer look at these publications revealed 
+that two of them are short papers~\cite{Alegroth-2013-ICST, Scharf-2013-ICSE},
+where having a more thorough evaluation is not 
+mandatory. 
+The other two papers~\cite{Burg-2015-UIST, 
+Deka-2016-UIST} were published at the ACM Symposium 
+on User Interface Software and Technology (UIST), 
+in which use case demonstrations appear to be more frequent.
+Four works included an industrial 
+evaluation~\cite{Li-2010-CHI, Mahajan-2015-ICST, 
+Amalfitano-2014-WISE, Kuchta-2018-EMSE} where the work is evaluated 
+through feedback or measurements in an industrial setting.
+
+\input{survey/rq4-table}
+
+
+Finally, 
+we noticed diversity in the evaluation methods of techniques aimed at solving similar problems. 
+For example, several works have been proposed to identify some sort of \textit{visual defects} (e.g., all the approaches dealing with XBI). 
+Four of these techniques~\cite{Mahajan-2014-ASE, Mahajan-2015-ICST, Mahajan-2016-ICST, Patric-2016-ASE} use ``seeded faults'' as an approach for constructing test oracles, whereas others take a different evaluation path. 
+For instance, \citet{Choudhary-2013-ICSE} manually count all XBIs detected by different tools (i.e., their agreement)
+as an upper bound for the number of issues that an XBI detection tool should identify, and use this number to compute the recall of X-PERT. As a further evaluation, authors could have been also evaluating their technique using seeded XBIs
+to broaden the evaluation. 
+Conversely, the works that only use seeded faults could use the agreement of multiple fault detectors to compute recall. 
+This scenario essentially suggests that the evaluation of some of the proposed techniques in the literature can be substantially improved by leveraging the evaluation approaches from other techniques that aim at solving similar problems. 
+
+\header{Challenges and Limitations}
+
+Evaluations also exposed the main challenges and limitations that authors faced while developing their visual-based solutions. 
+Unfortunately, a subset of the papers (41\%) either do not explicitly discuss drawbacks for the visual approach being evaluated, or do not provide concrete failing examples. On the other hand, the majority of the papers (59\%) do report the challenges encountered during the experimentations, summarized in \Cref{table:evaluation-techniques} (Challenges),  which we describe next. 
+
+\header{Noise} 
+The most recurring technical issue that inhibited the correct functioning of visual approaches concerns the \textit{noise} present in the visual artifacts~\cite{Ponzanelli-2016-ICSE,Reiss-2018-ASEj,Bao-2017-EMSE,Nguyen-2015-ASE,Kuchta-2018-EMSE,Leotta-2018-STVR,Li-2010-CHI,Lin-2014-TSE}. 
+Noise refers to the presence of other random or overlapping items in the background of the visual artifact that prevents, for instance, the correct detection of the target object. Hence, before applying the desired visual method, a pre-processing technique is often used to clear the noise out of the artifact. 
+
+As an example,~\citet{Ponzanelli-2016-ICSE} apply OCR to detect source code in frames sampled from video tutorials. However, the effectiveness of OCR fluctuates dramatically if the considered frame's background contains non-pertinent information. As a solution, the authors utilize two additional visual techniques---shape detection and frame segmentation---in order to focus OCR towards the area of interest.
+
+Another more specific noise-related limitation pertains to the \textit{sensitivity} of the visual approach to theme/surroundings changes, lighting conditions, and reflections~\cite{Chang-2010-CHI,Kirac-2018-JSS,Leotta-2018-STVR,Kuchta-2018-EMSE,Li-2010-CHI,Lin-2014-TSE}. A possible mitigation concerns using threshold parameters to limit their detrimental effect. 
+
+\header{Dynamicity} Highly-variable visual artifacts are also a major challenge for the design and development of reliable visual approaches. 
+
+One source of fragility is due to animations~\cite{canvas_icst2018,Chang-2010-CHI,Choudhary-2010-ICSM}. Indeed, a continuously-changing visual artifact (e.g., a video frame) represents a major limitation for many one-shot techniques. As a possible solution, such techniques would need to be applied repeatedly, similarly as real-time domains, or, in extreme cases, re-designed from scratch to meet the new domain requirements. 
+
+Another source of fragility is due to web advertisements~\cite{Wan-2017-STVR}.
+An ad is rendered as a dynamic component within a more static container (i.e., a web page),
+the visual representation of which usually changes across consecutive loads of the web page or over different time stamps.
+Visual methods need to isolate the dynamics of web pages to avoid erroneous behaviour or false positives.  
+
+\header{Recognition}
+Another challenge of visual approaches that emerged from our study concerns (1)~accurately identifying small imperceptible differences between images and (2)~recognizing complex user-defined actions such as manually inserted strokes or handwriting. 
+
+For example, a source of false positives in \textsc{VISOR}~\cite{Kirac-2018-JSS}, an image comparison technique used for black-box testing of digital TVs, is the tiny differences that occur when rendering accent characters on the screen (e.g., cedillas). 
+Typically, the choice on whether such differences should be considered as defects or not is left to human's perception. 
+%
+Two other works experienced recognition issues, but not at the same pixel-level as \textsc{VISOR}. \citet{Bao-2017-EMSE} discuss problems in detecting visual fine-grained developers' actions from videos, such as code editing, text selection, and window scrolling. Similarly,~\citet{Scharf-2013-ICSE} mention issues in detecting handwriting in manually-produced sketches. 
+
+These findings demonstrate how complex is the set of visual differences that can emerge while comparing two images, and how vast and multifaceted is the set of input actions that are possible on a user interface. Indeed, when a visual method is used to actively support the \emph{end user}, they arguably need to recognize a broader set of inputs than those they would receive from another algorithm, if they were executed in a software controlled environment. This poses new challenges to the development of robust visual approaches for aiding SE.
+
+
+\header{Visibility}
+At last, in four works, having the visual artifact present in the main rendering area is mentioned as a requirement for the visual technique to effectively fulfill its task.
+This requirement can be violated by, e.g., \textit{fading}~\cite{Chang-2010-CHI,Leotta-2018-STVR} and \textit{scrolling}~\cite{Choudhary-2010-ICSM,Bao-2017-EMSE}.
+
+As an example, \citet{Leotta-2018-STVR}'s tool \textsc{PESTO} uses template matching to detect the optimal visual locator corresponding to a web element on the page. However, the web element of interest might be outside the actual rendered web page. This happens when a long and complex form with multiple fields cannot be entirely visualized within the main screen. The authors propose an engineering workaround to solve issues related to scrolling: if the visual artifact being searched is not immediately displayed, the tool scrolls the page down automatically and the template matching is repeated.
+
+

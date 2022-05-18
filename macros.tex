@@ -1,0 +1,795 @@
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = diss.tex
+
+
+
+
+% TSE paper macros
+\usepackage{cite}
+\usepackage{booktabs} % For formal tables
+\usepackage{soul}
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{ifthen}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{url,moreverb,xspace}
+\usepackage{array,graphicx}
+\usepackage{balance}
+\usepackage{pifont}
+\usepackage{threeparttable}
+\usepackage[numbers]{natbib}
+\usepackage{etoolbox,siunitx}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+
+\usepackage{longtable}
+
+%\soulregister{\cite}
+%\soulregister{\emph}
+\sethlcolor{green}
+
+%\usepackage{showframe}
+\sisetup{output-decimal-marker={.},group-separator={,},group-minimum-digits=4,detect-family=true}
+
+% MACROS
+\newtheorem{defn}{Definition}
+
+\newboolean{showcomments}
+\setboolean{showcomments}{true}
+\ifthenelse{\boolean{showcomments}}
+{\newcommand{\nb}[2] {
+		\fcolorbox{black}{gray!20}{\bfseries\sffamily\scriptsize#1:}
+		{\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
+	}
+}
+{\newcommand{\nb}[2]{}
+}
+\newcommand\mohammad[1]{\nb{Mohammad}{\hl{#1}}}
+\newcommand\andrea[1]{\nb{Andrea}{\hl{#1}}}
+\newcommand\davood[1]{\nb{Davood}{\hl{#1}}}
+\newcommand\ali[1]{\nb{Ali}{\hl{#1}}}
+
+% \tcbset{width=0.48\textwidth,boxrule=0pt,colback=Goldenrod,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=0pt}
+% \newcommand\revised[1]{
+%   \begin{tcolorbox}
+%     \color{OliveGreen} #1
+%   \end{tcolorbox}
+% }
+
+% \definecolor{responseColor}{RGB}{0, 105, 60}
+\definecolor{responseColor}{RGB}{255, 255, 255}
+
+\newcommand{\hlcolor}{responseColor}
+\newcommand{\revised}[2]{
+	\colorbox{responseColor}{\parbox{#1}{\color{black} #2}}
+}
+
+% \newcommand{\changed}[1]{{\color{responseColor}{#1}}}
+\newcommand{\changed}[1]{#1}
+
+\newcommand{\header}[1]{\par\vspace{-1mm}\medskip\noindent\textbf{#1.}}
+
+\newcommand{\technique}{CV\xspace}
+\newcommand{\numberOfPapers}{66\xspace}
+\newcommand{\initialPoolSize}{2,716\xspace}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Canvas paper macros
+\newcommand\textlcsc[1]{\textsc{\MakeLowercase{#1}}}
+
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{balance}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{soul}  % for \hl{}
+\usepackage{amsmath}
+\usepackage{moreverb,xspace}
+\usepackage{booktabs} % For formal tables
+\usepackage{multirow}
+\usepackage{cleveref}
+
+\definecolor{lightgray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{darkgray}{rgb}{0.4, 0.4, 0.4}
+%\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.2, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+\definecolor{orange}{rgb}{1,0.45,0.13}      
+\definecolor{olive}{rgb}{0.17,0.59,0.20}
+\definecolor{brown}{rgb}{0.69,0.31,0.31}
+\definecolor{purple}{rgb}{0.38,0.18,0.81}
+\definecolor{lightblue}{rgb}{0.1,0.30,0.7}
+\definecolor{lightred}{rgb}{1,0.4,0.5}
+
+
+\lstdefinelanguage{javascript}{
+	morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	morecomment=[s]{/*}{*/},
+	morecomment=[l]//,
+	morestring=[b]",
+	morestring=[b]'
+}
+
+\lstset{
+	%     backgroundcolor=\color{backcolour},   
+	%     keywordstyle=\color{codegreen},
+	%     numberstyle=\tiny\color{codegray},
+	%     stringstyle=\color{codepurple},
+	%     basicstyle={\sffamily},
+	%     breakatwhitespace=false,         
+	%     breaklines=true,                 
+	%     captionpos=t,                    
+	%     keepspaces=true,                 
+	%     numbers=left,                    
+	%     numbersep=5pt,                  
+	%     showspaces=false,                
+	%     showstringspaces=false,
+	%     showtabs=false,                  
+	%     tabsize=2
+	% General design
+	backgroundcolor=\color{editorGray},
+	basicstyle={\scriptsize\ttfamily},   
+	captionpos=b,
+	frame=bt,
+	% line-numbers
+	xleftmargin={0.75cm},
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	numberfirstline=true, 
+	% Code design
+	identifierstyle=\color{black}\ttfamily,
+	keywordstyle=\color{lightblue}\bfseries\ttfamily,
+	ndkeywordstyle=\color{editorGreen}\bfseries\ttfamily,
+	stringstyle=\color{olive}\ttfamily,
+	commentstyle=\color{brown}\ttfamily,
+	% Code
+	tabsize=2,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	extendedchars=true,
+	breaklines=true,
+	% German umlauts
+	literate=%
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1    
+}
+
+\newcommand{\tool}{\textsc{CanvaSure}\xspace}
+
+\newcommand{\head}[1]{\par\smallskip\noindent\textbf{#1.}}
+
+
+
+
+
+
+
+
+
+
+
+% Accessibility testing macros
+% !TEX root =  paper.tex
+
+% \usepackage{cite}
+% \usepackage{amsmath,amssymb,amsfonts}
+% \usepackage{algorithmic}
+% \usepackage{graphicx}
+% \usepackage{subcaption}
+% \usepackage{textcomp}
+% \usepackage{xcolor}
+% \usepackage{multicol} % \columnbreak
+% \usepackage{balance}
+% \usepackage{enumitem}    
+\usepackage[table]{xcolor}
+
+\usepackage{tabularx} 
+\usepackage{collcell}
+
+% \usepackage[usenames,dvipsnames,svgnames,table,xcdraw]{xcolor}
+% \usepackage[usenames,dvipsnames,svgnames]{xcolor}
+% \usepackage{pgfplots}
+% \pgfplotsset{compat=1.10}
+
+
+\usepackage{booktabs}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\usepackage{cite}
+% \usepackage{hyperref}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{enumitem}    
+%\usepackage[greek,english]{babel}
+\usepackage{ifthen}
+\usepackage{xspace}
+\usepackage{fancybox}
+\usepackage{marginnote}
+\usepackage{tcolorbox}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{algpseudocode, algorithm, algorithmicx}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+%\usepackage{cleveref}
+\usepackage{hhline}
+\usepackage{balance}
+
+\usepackage{listings}
+\usepackage{parcolumns}
+%\usepackage{cleveref}
+
+\usepackage{array}
+
+\usepackage{adjustbox}
+\usepackage{flushend}
+\usepackage[switch]{lineno}
+
+\definecolor{light-gray}{gray}{0.85}
+\newcommand{\code}[1]{\colorbox{light-gray}{\fontsize{9pt}{10pt}\texttt{#1}}}
+
+\definecolor{circled-color}{gray}{0.15}
+\newcommand*\circled[1]{\tikz[inner sep=.1ex,baseline=-.75ex] \node[circle,draw,color=white,fill=circled-color] {#1};}
+
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+%\newboolean{showcomments}
+\setboolean{showcomments}{false}
+\ifthenelse{\boolean{showcomments}}
+{
+	\definecolor{myyellow}{RGB}{255, 228, 26}
+	\definecolor{myblue}{RGB}{50, 50, 220}
+	\definecolor{myred}{RGB}{250, 10, 10}
+%	\newcommand{\nb}[2]{
+%		{\sf
+%			\fcolorbox{myyellow}{orange}{\scriptsize\textbf{#1}}%
+%			$\blacktriangleright$%
+%			{\color{myred}\fontsize{7pt}{8pt}\selectfont\textbf{[[#2]]}}%
+%		}%
+%	}
+}
+{
+%	\newcommand{\nb}[2]{}
+}
+
+%\newcommand{\mohammad}[1]{\nb{Mo}{#1}}
+%\newcommand{\ali}[1]{\nb{Ali}{#1}}
+
+
+\usepackage{color}
+
+
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+
+\lstdefinelanguage{JavaScript}{
+	morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	morecomment=[s]{/*}{*/},
+	morecomment=[l]//,
+	morestring=[b]",
+	morestring=[b]'
+}
+\lstdefinelanguage{HTML5}{
+	language=html,
+	sensitive=true, 
+	alsoletter={<>=-},
+	otherkeywords={
+		% HTML tags
+		<html>, <head>, <title>, </title>, <meta, />, </head>, <body>,
+		<canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, ><
+	},  
+	ndkeywords={
+		% General
+		=,
+		% HTML attributes
+		charset=, id=, width=, height=,
+		% CSS properties
+		border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:
+	},  
+	morecomment=[s]{<!--}{-->},
+	tag=[s]
+}
+
+\lstdefinelanguage{CSS}{
+	morekeywords={background,color,display,justify,content,font,weight,border,size,padding},
+	morestring=[s]{:}{;},
+	sensitive,
+	morecomment=[s]{/*}{*/}
+}
+
+\lstset{%
+	% Basic design
+	backgroundcolor=\color{editorGray},
+	basicstyle={\scriptsize\ttfamily},   
+	frame=l,
+	% Line numbers
+	xleftmargin={0.75cm},
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	numberfirstline=true,
+	% Code design   
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{darkgray}\ttfamily,
+	ndkeywordstyle=\color{editorGreen}\bfseries,
+	stringstyle=\color{editorOcher},
+	% Code
+	language=HTML5,
+	alsolanguage=JavaScript,
+	alsodigit={.:;},
+	tabsize=2,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	extendedchars=true,
+	breaklines=true,        
+	% Support for German umlauts
+	literate=%
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+}
+
+\newcommand{\todo}[1]{\textcolor{magenta}{\nb{TODO:}{#1}}}
+%\newcommand{\header}[1]{\par\smallskip\noindent\textbf{#1.}}
+
+\newcommand{\html}{\textsc{HTML}\xspace}
+\newcommand{\css}{\textsc{CSS}\xspace}
+\newcommand{\javascript}{\textsc{JavaScript}\xspace}
+
+\newcommand{\toolname}{\textsc{AxeRay}\xspace}
+
+\newcommand{\UIelements}{UI elements}
+\newcommand{\UIelement}{UI element}
+
+\newcommand{\VizObjs}{Visual Objects}
+\newcommand{\VizObj}{Visual Object}
+\newcommand{\vizobj}{visual object}
+\newcommand{\vizobjs}{visual objects}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Web form accessibility macros
+% !TEX root =  paper.tex
+
+		%\usepackage{cite}
+		% \usepackage{amsmath,amssymb,amsfonts}
+		% \usepackage{algorithmic}
+		% \usepackage{graphicx}
+		% \usepackage{subcaption}
+		% \usepackage{textcomp}
+		% \usepackage{xcolor}
+		% \usepackage{multicol} % \columnbreak
+		% \usepackage{balance}
+		% \usepackage{enumitem}    
+		%\usepackage[table]{xcolor}
+		%\usepackage{nohyperref}
+%\usepackage{xcolor}
+%\usepackage{tabularx} 
+%\usepackage{collcell}
+		% \usepackage[usenames,dvipsnames,svgnames,table,xcdraw]{xcolor}
+		% \usepackage[usenames,dvipsnames,svgnames]{xcolor}
+		% \usepackage{pgfplots}
+		% \pgfplotsset{compat=1.10}
+%\usepackage{booktabs}
+%\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+		%\usepackage{cite}
+		% \usepackage{hyperref}
+%\usepackage{array}
+%\usepackage{threeparttable}
+%\usepackage{enumitem}    
+%\usepackage[greek,english]{babel}
+%\usepackage{ifthen}
+%\usepackage{xspace}
+%\usepackage{fancybox}
+%\usepackage{marginnote}
+%\usepackage{tcolorbox}
+%\usepackage{multirow}
+%\usepackage{mathtools}
+%\usepackage{algpseudocode, algorithm, algorithmicx}
+%\usepackage{color}
+%\usepackage{soul}
+%\usepackage{graphicx}
+%\usepackage{amsmath}
+%\usepackage{tikz}
+%\usepackage{cleveref}
+%\usepackage{hhline}
+%\usepackage{balance}
+%\usepackage{listings}
+%\usepackage{parcolumns}
+%\usepackage{cleveref}
+%\usepackage{array}
+%\usepackage{adjustbox}
+%\usepackage{flushend}
+%\usepackage[switch]{lineno}
+%\definecolor{light-gray}{gray}{0.95}
+		%\newcommand{\code}[1]{\colorbox{light-gray}{\fontsize{9pt}{10pt}\texttt{#1}}}
+
+%\definecolor{circled-color}{gray}{0.15}
+		%\newcommand*\circled[1]{\tikz[inner sep=.1ex,baseline=-.75ex] \node[circle,draw,color=white,fill=circled-color] {#1};}
+
+
+%\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+		%\newboolean{showcomments}
+%\setboolean{showcomments}{true}
+%\hypersetup{draft,bookmarks=false}
+
+		%\ifthenelse{\boolean{showcomments}}
+		%{
+		%	\definecolor{myyellow}{RGB}{255, 228, 26}
+		%	\definecolor{myblue}{RGB}{50, 50, 220}
+		%	\newcommand{\nb}[2]{
+		%		{\sf
+		%			\fcolorbox{myyellow}{yellow}{\scriptsize\textbf{#1}}%
+		%			$\blacktriangleright$%
+		%			{\color{myblue}\fontsize{7pt}{8pt}\selectfont\textbf{#2}}%
+		%		}%
+		%	}
+		%}
+		%{
+		%	\newcommand{\nb}[2]{}
+		%}
+		
+		
+		%\newcommand{\Mo}[1]{\nb{Mo}{#1}}
+		%\newcommand{\Ali}[1]{\nb{Ali}{#1}}
+
+%\usepackage{color}
+
+%\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+%\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+%\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+
+\lstdefinelanguage{JavaScript}{
+	morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	morecomment=[s]{/*}{*/},
+	morecomment=[l]//,
+	morestring=[b]",
+	morestring=[b]'
+}
+\lstdefinelanguage{HTML5}{
+	language=html,
+	sensitive=true, 
+	alsoletter={<>=-},
+	otherkeywords={
+		% HTML tags
+		<html>, <head>, <form>, </form>, <div>, </div>, <p>, </p>, 
+		<span>, </span>, <input, <textarea, </textarea>, <select, </select>, 
+		<option>, </option>, <title>, </title>, <meta, />, </head>, <body>,
+		<canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <section>, </section>
+	},  
+	ndkeywords={
+		% General
+		=,
+		% HTML attributes
+		charset=, id=, width=, height=, type=, value=, checked
+		% CSS properties
+		border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:
+	},  
+	morecomment=[s]{<!--}{-->},
+	tag=[s]
+}
+
+\lstdefinelanguage{CSS}{
+	morekeywords={background,color,display,justify,content,font,weight,border,size,padding},
+	morestring=[s]{:}{;},
+	sensitive,
+	morecomment=[s]{/*}{*/}
+}
+		%\newcommand{\todo}[1]{\textcolor{magenta}{\nb{TODO:}{#1}}}
+		%\newcommand{\header}[1]{\par\smallskip\noindent\textbf{#1.}}
+		%\newcommand{\toolname}{\textsc{AxeForm}\xspace}
+		%\newcommand{\html}{\textsc{HTML}\xspace}
+		%\newcommand{\css}{\textsc{CSS}\xspace}
+		%\newcommand{\javascript}{\textsc{JavaScript}\xspace}
+\lstset{%
+	% Basic design
+	backgroundcolor=\color{editorGray},
+	basicstyle={\linespread{1.0}\scriptsize\ttfamily},   
+	frame=l,
+	% Line numbers
+	xleftmargin={0.75cm},
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	numberfirstline=true,
+	% Code design   
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{darkgray}\ttfamily,
+	ndkeywordstyle=\color{editorGreen}\bfseries,
+	stringstyle=\color{editorOcher},
+	% Code
+	language=HTML5,
+	alsolanguage=JavaScript,
+	alsodigit={.:;},
+	tabsize=2,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	extendedchars=true,
+	breaklines=true,        
+	% Support for German umlauts
+	literate=%
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% macros form components generation paper
+
+% !TEX root =  paper.tex
+
+\usepackage{booktabs}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\usepackage{cite}
+%\usepackage{hyperref}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{enumitem}    
+%\usepackage[greek,english]{babel}
+\usepackage{ifthen}
+\usepackage{xspace}
+\usepackage{fancybox}
+\usepackage{marginnote}
+\usepackage{tcolorbox}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{algpseudocode, algorithm, algorithmicx}
+\usepackage{color,soul}
+\usepackage{graphicx}
+%\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+%\usepackage{cleveref}
+\usepackage{hhline}
+\usepackage{balance}
+
+
+%\newboolean{showcomments} 
+\setboolean{showcomments}{false}
+%\ifthenelse{\boolean{showcomments}}
+%{\newcommand{\nb}[2]{
+%		\fbox{\bfseries\sffamily\scriptsize#1}%
+%		{\sf\footnotesize$\blacktriangleright$\textcolor{blue}{\hl{#2}}$\blacktriangleleft$}
+%	}
+%}
+%{\newcommand{\nb}[2]{}}
+
+\definecolor{circled-color}{gray}{0.15}
+%\newcommand*\circled[1]{\tikz[inner sep=.1ex,baseline=-.75ex] \node[circle,draw,color=white,fill=circled-color] {#1};}
+
+
+\newcommand{\VizElem}{visual element}
+\newcommand{\VE}{VE}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+%\usepackage{mathptmx}
+
+%\let\temp\rmdefault
+%\usepackage{mathpazo}
+%\let\rmdefault\temp
+
+%\newcommand\ali[1]{\nb{Ali}{#1}}
+%\newcommand\mohammad[1]{\nb{Mohammad}{#1}}
+%\newcommand\davood[1]{\nb{Davood}{#1}}
+
+%\newcommand{\todo}[1]{\textcolor{magenta}{\nb{TODO:}{#1}}}
+
+%\newcommand{\MyParagraph}[1]{\par\smallskip\noindent\textbf{#1}}
+
+%\newcommand{\header}[1]{\par\vspace{-1mm}\medskip\noindent\textbf{#1.}}
+
+\newcommand{\hide}[1]{}
+
+%\newcommand{\code}[1]{\texttt{\fontsize{9.5}{11}\selectfont #1}}
+\newcommand{\smcode}[1]{\texttt{\fontsize{7.5}{8}\selectfont #1}}
+
+\definecolor{findingsbox-bg-color}{gray}{0.90}
+\newtcbox{\findingsbox}{colback=findingsbox-bg-color, boxrule=0.2pt, arc=2pt, boxsep=0pt, left=5pt, right=5pt, top=5pt, bottom=5pt}
+\newcommand{\findings}[2] {
+	\vspace{5pt}
+	\noindent
+	\findingsbox{
+		\begin{minipage}{.95\linewidth}
+			\textbf{#1}: #2
+		\end{minipage}
+	}
+}
+
+%\newtheorem{defn}{Definition}
+
+% Define tool names, etc. here
+%\newcommand{\html}{\textsc{HTML}\xspace}
+%\newcommand{\css}{\textsc{CSS}\xspace}
+%\newcommand{\javascript}{\textsc{JavaScript}\xspace}
+\newcommand{\react}{\textsc{React}\xspace}
+\newcommand{\angular}{\textsc{Angular}\xspace}
+\newcommand{\nicad}{\textsc{NiCad}\xspace}
+\newcommand{\xpath}{\textsc{XPath}\xspace}
+\newcommand{\dom}{\textsc{DOM}\xspace}
+\newcommand{\cssdev}{\textsc{CSSDev}\xspace}
+
+\newcommand{\model}{Component Intermediate Model\xspace}
+\newcommand{\mappedset}{Mapping Nodes Set\xspace}
+
+%\newcommand{\toolname}{\textsc{VizMod}\xspace}
+
+%\newcommand{\numberOfEmails}{\hl{X}\xspace}
+\newcommand{\numberOfTemplates}{five\xspace}
+\newcommand{\numberOfParticipants}{five\xspace}
+\newcommand{\numberOfComponents}{25\xspace}
+\newcommand{\totalNumberOfComponentInstances}{120\xspace}
+\newcommand{\precision}{94\%\xspace}
+\newcommand{\recall}{75\%\xspace}
+\newcommand{\sizeReductionMin}{6.01\%\xspace}
+\newcommand{\sizeReductionmax}{19.34\%\xspace}
+
+
+\newboolean{showreviewhints} 
+\setboolean{showreviewhints}{false}
+\ifthenelse{\boolean{showreviewhints}}{
+	\definecolor{reviewcolor}{RGB}{0,0,255}
+	\newcommand{\revised}[2]{\setlength{\marginparwidth}{1.05cm}\marginnote{\color{reviewcolor}{\fbox{\parbox{\dimexpr\linewidth-1\fboxsep-2\fboxrule}{#2}}}}{\color{reviewcolor}{#1}}}
+}
+{
+%	\newcommand{\revised}[2]{#1}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%
+%% This file provides examples of some useful macros for typesetting
+%% dissertations.  None of the macros defined here are necessary beyond
+%% for the template documentation, so feel free to change, remove, and add
+%% your own definitions.
+%%
+%% We recommend that you define macros to separate the semantics
+%% of the things you write from how they are presented.  For example,
+%% you'll see definitions below for a macro \file{}: by using
+%% \file{} consistently in the text, we can change how filenames
+%% are typeset simply by changing the definition of \file{} in
+%% this file.
+%% 
+%
+%\newcommand{\NA}{\textsc{n/a}}	% for "not applicable"
+%\newcommand{\eg}{e.g.,\ }	% proper form of examples (\eg a, b, c)
+%\newcommand{\ie}{i.e.,\ }	% proper form for that is (\ie a, b, c)
+%\newcommand{\etal}{\emph{et al}}
+%
+%% Some useful macros for typesetting terms.
+%\newcommand{\file}[1]{\texttt{#1}}
+%\newcommand{\class}[1]{\texttt{#1}}
+%\newcommand{\latexpackage}[1]{\href{http://www.ctan.org/macros/latex/contrib/#1}{\texttt{#1}}}
+%\newcommand{\latexmiscpackage}[1]{\href{http://www.ctan.org/macros/latex/contrib/misc/#1.sty}{\texttt{#1}}}
+%\newcommand{\env}[1]{\texttt{#1}}
+%\newcommand{\BibTeX}{Bib\TeX}
+%
+%% Define a command \doi{} to typeset a digital object identifier (DOI).
+%% Note: if the following definition raise an error, then you likely
+%% have an ancient version of url.sty.  Either find a more recent version
+%% (3.1 or later work fine) and simply copy it into this directory,  or
+%% comment out the following two lines and uncomment the third.
+%\DeclareUrlCommand\DOI{}
+%\newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{\DOI{doi:#1}}}
+%%\newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{doi:#1}}
+%
+%% Useful macro to reference an online document with a hyperlink
+%% as well with the URL explicitly listed in a footnote
+%% #1: the URL
+%% #2: the anchoring text
+%\newcommand{\webref}[2]{\href{#1}{#2}\footnote{\url{#1}}}
+%
+%% epigraph is a nice environment for typesetting quotations
+%\makeatletter
+%\newenvironment{epigraph}{%
+%	\begin{flushright}
+%	\begin{minipage}{\columnwidth-0.75in}
+%	\begin{flushright}
+%	\@ifundefined{singlespacing}{}{\singlespacing}%
+%    }{
+%	\end{flushright}
+%	\end{minipage}
+%	\end{flushright}}
+%\makeatother
+%
+%% \FIXME{} is a useful macro for noting things needing to be changed.
+%% The following definition will also output a warning to the console
+%\newcommand{\FIXME}[1]{\typeout{**FIXME** #1}\textbf{[FIXME: #1]}}
+
+% END

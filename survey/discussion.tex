@@ -1,0 +1,144 @@
+% !TEX root =  manuscript.tex
+\section{Discussion}\label{sec:discussion}
+
+\header{Increasing Adoption of Visual Approaches}
+Our findings show a general growth trend in the adoption and use of visual approaches
+in the SE community.
+Most of the surveyed papers explicitly recognize, and empirically
+demonstrate, the contribution brought by visual methods in supporting SE tasks.
+
+Based on our examination of the literature,
+we attribute this increase to two factors.
+First, many software developed nowadays have a GUI or other visual interfaces.
+The end-user experience is increasingly becoming more important in adding value
+to software, and therefore the adoption of visual methods is expected to
+increase further in the next years.
+Our examination of the trend of number of annual publications 
+already shows this trend of increasing number of works utilizing 
+visual techniques.
+Second, the rapid pace of improvement in hardware and processor architecture has made
+the efficiency and run time of advanced visual techniques feasible in common
+development environments, which we expect will cause an increased adoption of
+visual approaches further down the line.
+
+\header{Software Testing a Major Driver of Visual Approaches}
+The majority of papers (around 75\%) have focused on the research area of
+software testing.
+Our intuition behind this is two-fold.
+First, testing is one of the most active SE research areas in general,
+so it is not surprising that most of the collected papers fall
+within this category.
+Second, testing is largely a tooling-based research area, in which
+tool prototypes are developed and empirically evaluated.
+Many different static and dynamic analysis tools are proposed each year
+to facilitate test engineers' activities. 
+The results of this survey show that the visual perspective of the software
+has been recently used to complement static and dynamic analysis because
+it provides a novel and complimentary perspective of the software under test.
+The types of analyses that are performed on the presentation-level of the
+application would be likely very difficult to perform by analyzing the source code only,
+especially with the increasingly complex interfaces and the great emphasis
+placed on user experience, of which the interface is a cornerstone component.
+
+
+\header{Custom Solutions}
+The visual techniques used in the collected papers are often ad-hoc solutions developed for tackling a specific problem. 
+Authors recognize that it is unlikely to have a consolidated and broadly-accepted solution.  
+More specifically, all collected papers have discussed, to some extent, the need of visual approaches for parameter fine-tuning, such as optimal threshold selections. 
+In contrast, as will be discussed in the next chapters, the 
+techniques proposed in this dissertation aim to minimize or eliminate the need for parameters or thresholds whenever possible. 
+
+Manipulating visual artifacts through a visual technique is highly application-specific, both in the adopted approach and in the considered domain~\cite{2020-Yandrapally-ICSE}. 
+For instance, this survey highlights a large body of work in the area of
+cross-browser incompatibility.
+The authors of these papers have adopted a large variety of solutions
+(or incremental variations) to tackle the same problem.
+To mention a few,~\citet{Choudhary-2010-ICSM} use an image comparison measure
+based on Earth Mover's Distance (EMD), whereas ~\citet{Mahajan-2015-ICST} adopt
+perceptual differencing, and~\citet{He-2016-ICWS} compare the colour histograms,
+among other approaches.
+This trend can be partially explained by the need of proposing and experimenting
+with novel and potentially useful techniques.
+However, a researcher approaching this topic for the first time could be
+somewhat disoriented.
+In fact, given that the solutions for the same problem are many,
+and they are often evaluated on different benchmarks,
+it is not straightforward to find an agreement on what the best technique could be. 
+This led to a landscape where each work would typically experiment with a custom
+visual processing pipeline to address the specifics of the SE task at hand.
+
+\header{Need for Visual Benchmarks in SE}
+We highlight the lack of comparative visual benchmarks on which to evaluate
+the plethora of visual approaches utilized in software engineering research. 
+A repository of standard, well-organized, categorized, and labeled visual artifacts could
+be very useful to support empirical experiments, and to guide
+the next generation of research utilizing visual approaches
+for software engineering tasks.
+Such repositories exist in traditional
+(non-visual) software engineering research,
+such as SIR~\cite{Do:2005:SCE:1089922.1089928},
+Defects4J~\cite{Just:2014:DDE:2610384.2628055}, SF100~\cite{sf100}, and BugsJS~\cite{bugsjs:icst19,2020-Gyimesi-STVR}. This has not been the case, however, for visual techniques in software engineering.
+For instance, having analogous repositories for visual bugs can foster
+further applications of visual methods in software testing. 
+In the issues discussed in this dissertation, which are all non-functional properties, no visual benchmarks exist either, since 
+the field is still at its early stages and hasn't matured yet to the degree of creating benchmarks. 
+
+Similarly, object detection and classification tasks need labeled images.
+In computer vision literature, there exist some pre-validated and labeled visual
+benchmarks, such as ImageNet~\cite{Russakovsky:2015:ILS:2846547.2846559},
+BSDS500~\cite{MartinFTM01}, or Caltech 101~\cite{Fei-Fei:2006:OLO:1115692.1115783}.
+In software engineering,
+a benchmark of labeled visual artifacts might
+aid in developing visual techniques,
+or training systems for machine learning and deep learning
+scenarios.
+A notable step in this direction has been carried out 
+in the Rico~\cite{Deka-2017-UIST} repository. 
+The repository contains around 70k labeled UI screenshots, 
+each of which are labeled with 
+visual, textual, structural, and interaction trace data.
+The dataset facilitates software engineering tasks 
+related to the UI, such as UI design search, UI layout generation, 
+and UI code generation.
+
+
+\header{Maintainability of Visual Artifacts}
+The visual artifacts created or extracted from the software 
+are rarely static across time,
+especially for rapidly evolving software such as in agile environments.
+The artifacts would therefore have to be frequently modified
+or updated to keep track of the underlying evolving software.
+\citet{Alegroth-2013-ICST} indicate that
+the maintainability of visual artifacts
+produced and used by the visual testing tools
+as being a major challenge of the
+visual-based testing approaches.
+Potential research directions to mitigate this challenge 
+include proposing strategies for conducting cost-benefit analysis
+depending on the expected degree of visual evolution of the software,
+and devising automated techniques to
+help with or reduce the maintainability
+effort for visual artifacts. 
+
+
+\header{Familiarity with Computer Vision}
+Perhaps the biggest challenge hindering a wider adoption
+of visual approaches in software engineering
+is the lack of familiarity with computer vision techniques.
+For instance,
+\citet{Delamaro-2011-STVR} describe how developers
+should have basic knowledge of image processing
+in order to even \textit{use} the proposed tool in the paper.
+This is because the visual artifacts can structurally vary with each use,
+and thus sometimes one or more manual image processing adjustments
+need to be performed before being able to process the visual artifacts. 
+In the work proposed in this dissertation, we mitigate this issue 
+by proposing techniques that reduce or eliminate the need for parameters or adjustment thresholds, in order to improve robustness. 
+
+\header{Threats to Validity}
+The threats to validity of this survey are the bias in the papers' selection and misclassification of the pool of papers in the various research questions. We mitigate these threats as follows.
+Our paper selection was driven by the keywords related to visual approaches and software engineering (see Section~\ref{sec:collection}). 
+We may have missed studies that use visual methods in the software engineering activities that are not captured by our terms list.
+To mitigate this threat, we performed an issue-by-issue manual search of the major software engineering conferences and journals, and followed through with a snowballing process.
+Concerning the papers' classification, we manually classified all selected papers into different categories based on the targeted SE area, as well as, more fine-grained sub-categories based on their domains, tasks, and the utilized visual methods (see Section~\ref{sec:results}). 
+\changed{Identifying the rationale from the papers that do not explicitly mentioned it  involved some subjectivity and may have resulted in suboptimal mappings, which constitutes another threat.} However, there is no ground-truth labeling for such classification. To minimize classification errors, the first three authors of this chapter have carefully analyzed the full text and performed the classifications individually. Any disagreements were resolved by further discussion.

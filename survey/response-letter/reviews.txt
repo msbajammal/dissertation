@@ -1,0 +1,96 @@
+Associate Editor
+Comments to the Author:
+"First, I want to apologize for the delay in this recommendation. One reviewer needed an extension to complete their review due to pandemic-related crises, and then ultimately was unable to complete it. I am basing my recommendation on the two reviews that have been submitted.
+
+Both reviewers still want to see this manuscript eventually published. But both also mention a critical flaw of the work, omitting several highly cited foundational prior works in the review, with no clear rationale. Without including and addressing these works, they do not view the survey as complete or definitive. I tend to agree; surveys of this nature should be inclusive to the history of prior work. After all, the point of a survey is to help future researchers quickly understand the history and state of the art. That is not possible of notable, foundational, and highly cited works are omitted.
+
+Both reviewers mention a number of other more minor revisions that are also essential.
+
+For the reasons above, I'm going to recommend major revisions once again, and return the paper for additional review to the two reviewers and myself to verify that both experts view the survey's revised scope as adequately covering prior work."
+
+********************
+
+Reviewers' Comments
+
+Please note that some reviewers may have included additional comments in a separate file. If a review contains the note "see the attached file" under Section III A - Public Comments, you will need to log on to ScholarOne Manuscripts  to view the file. After logging in, select the Author Center, click on the "Manuscripts with Decisions" queue and then clicking on the "view decision letter" link for this manuscript. You must scroll down to the very bottom of the letter to see the file(s), if any.  This will open the file that the reviewer(s) or the Associate Editor included for you along with their review.
+
+
+
+
+============================
+
+
+
+Reviewer: 1
+
+Public Comments (these will be made available to the author)
+I would like to thank the authors for their consideration of the revisions suggested by all of the reviewers. I still believe that the work the authors are conducting is both timely and relevant to the SE research community. However, given some of the papers and issues brought up by the other reviewers, I am recommending that the authors prepare another major revision of this manuscript. The primary reason for this has to do with the current scope of the search strategy, as I explain in more detail below.
+
+First, in general, I would like to thank the authors for addressing most of my concerns from my original review. In particular, the summary at the end of each RQ has made the paper much more readable overall. I also appreciate that the authors made the results of their work available in an online appendix attached to a GitHub repository. I would like to see this collection of papers continue to grow as this research area matures.
+
+As for addressing some of the comments of the other reviewers, I also believe the authors did a generally commendable job, with a few exceptions as I outline below. 
+
+I also agree with Reviewer 2 that the current title is a bit vague when taken at face value. It could be taken to mean that the paper is a survey on incorporating CV during the engineering process of a software system. One concrete suggestion for the title I might consider is “A Survey on the Use of Computer Vision Techniques to Improve Software Engineering Tasks”. I think this strikes more squarely with what the authors are trying to do in the survey. 
+
+The authors argue that their paper is not an SLR, and generally I would agree. However, I think they need to clarify why an SLR is not appropriate in this context. Are there too few papers? Is the research area too young? Some more clarification on this point would help to solidify the overall purpose of the paper. 
+
+In general, I don’t have any major objections to the current research questions given the relative recency of this field. I will say I find that RQ2 is somewhat subjective, as the authors essentially have to interpret rationale that may or may not be explicitly stated in a given paper. Given the somewhat subjective nature of this processit would be great to understand the methodology more clearly, . For instance, were papers discarded from this question if no explicit rationale was given?
+
+While the construction of the query terms and Boolean combinations could have been further refined, for this survey, I believe the search query as constructed would lead to the return of most relevant papers (if the list of venues was more complete, see later comment).
+
+I do believe this is the first major survey I have seen on the use of CV techniques to improve/automate SE tasks. I think the revised version of the manuscript does a fine job of distinguishing the novelty from other related surveys. 
+
+I agree with the third reviewer that it would be interesting to include a small section that surveys state of the art developer tools or approaches from industry with the primary goal of applying CV techniques to enhance some aspect of the development process. The search process for these could be completely separate from the paper search methodology. 
+
+My biggest current problem with the current revision of the manuscript is that the authors did not update their search methodology and inclusion criteria given some highly related papers suggested by the other reviewers. The other reviewers mentioned several papers across different venues that would be considered outside the main SE conferences and journals, yet still contained very relevant papers to the overarching goal of this survey. For instance, even in the author’s own Figure 5, two of the venues with nontrivial numbers of papers (CHI and UIST) were not included in the search methodology. Given the suggestion of highly relevant papers from these venues, it is imperative that the authors revise their search strategy to include other related papers from these venues, and not simply add the papers that the reviewers suggested. This also makes the replication of the survey paper list difficult, as it is not clear why the papers from these venues were included when they were not in the list of potential publication venues given in Table 1. 
+
+Publication venues that are more focused on HCI and user interfaces have been applying vision-based techniques to SE areas/tasks likely longer than the SE field has been, given their tighter focus. As such, there is likely much that SE researchers could learn by including such papers within this survey. This would help to give a more complete picture of this cross-disciplinary research field and provide information on the successes and failures of the past work so to inform the design of future techniques that are more SE focused. 
+
+In addition to HCI-related venues, I think it would also be beneficial for the authors to consider some top ML and CV venues, such as CVPR, as there are likely to be some papers that apply CV to SE-related tasks from these fields as well. Given the interdisciplinary nature of this work, I believe this breadth is critical for collecting a representative set of papers in this area. This is my main reason for suggesting a major revision for the current vision of this manuscript. Should the authors address this concern (although this would require quite a bit of additional effort) and some other minor concerns, I would be happy to see it published.
+
+
+
+
+===============
+
+
+
+Reviewer: 3
+
+Public Comments (these will be made available to the author)
+The following refers to the original submission as R0 and the first revision as R1.
+
+On the positive side, R1 fixes several of R0's problems and adds new valuable information (i.e., the data the authors published on Github in Section 2.4.3).
+
+On the flip side, R1 still does not do a good job of putting the survey into the context of prior work. The most closely related work [86] is only discussed in one paragraph on the last page. This treatment of a related survey is too little too late, as both surveys overlap significantly (the previous survey focused on testing and in this "general software engineering" survey 75% of the surveyed papers are also about testing). In some sense R1 has become worse than R0 because R0 still had a measure of this overlap (11 of the discussed papers) but R1 conveniently omits this information.
+
+To me, this article should start by summarizing the findings of the earlier survey and then formulate its research questions in relation to the earlier work (which questions did [86] not answer and which questions need additional evidence?).
+
+Related to the previous point, the first contribution bullet in section 1 ("first survey on the use of computer vision (CV) for software engineering") is misleading, as testing is clearly part of software engineering and we already have the earlier survey [86].
+
+
+
+While R1 improves Section 2 by providing some definitions, it still misses a definition of the "construction" box (right top of Figure 1). For example, does taking a screenshot of a UML diagram count as "construction"?
+
+Related to the previous point, why does Section 2.2 explicitly exclude UML modeling documents, but Figure 1 shows them? The text includes taking a screenshot from the user interface, but taking a similar screenshot of the UML diagrams are out of scope? The bottom line is that the methodology is still confusing and needs clarification.
+
+Part of the confusion is writing such as: "Further details on what is or is not included in this survey are covered in sections 2.4.1 and 2.4.1."
+
+While Section 2 tries to exclude some earlier work from the scope of the paper, RQ1 is written very broadly to include all aspects of software engineering. Maybe RQ1 should be reworded to the scope the article intends to have?
+
+
+
+While R1 is more comprehensive than R0, R1 still omits important early papers (despite the letter to the editor claiming otherwise). Omitting such early foundational work is just not right. They have been highly influential and attracted hundreds of citations:
+
+James A. Landay and Brad A. Myers. 2001. Sketching interfaces: Toward more human interface design. IEEE Computer 34, 3 (March 2001), 56–64.
+
+Morgan Dixon and James Fogarty. 2010. Prefab: Implementing advanced behaviors using pixel-based reverse engineering of interface structure. In Proc. ACM SIGCHI Conference on Human Factors in Computing Systems (CHI). ACM, 1525–1534.
+
+
+
+
+Minor issues that R1 did not fix:
+
+"SRL" should still be "SLR". Also the article should still define "SLR" before using it.
+
+Figure 4 line types are still very hard to distinguish, which makes the figure still very hard to understand.

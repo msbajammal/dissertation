@@ -1,0 +1,42 @@
+Template matching,OCR
+Direct diff (raw),Probability Distribution Distance (EMD)
+Perspective warp,White Balance,thresholding,Color filtering,Direct diff (raw),Gaussian kernel
+N/S
+Classification (DT),geometric visual features,Probability Distribution Distance (X2)
+Levenshtein distance (of strokes),rest (majority of steps) are not specified
+N/S
+Cross-browser element-wise template matching,Classification (DT),Classification (NN),features: geometric,intensity bins
+Probability Distribution Distance (X2),element-wise
+Template matching,SURF feature,Probability Distribution Distance (not specified)
+Direct diff (raw),Rtree
+Cross-correlation,OCR
+N/S
+OCR
+Mean pixel-wise intensity difference,Direct diff (mean)
+Direct diff (PID)
+Autoencoder features
+OCR,Direct diff (raw),Shape Detection (nost specified which specific algorithm),Frame Segmentation (not specified which specifc algorithm)
+Probability Distribution Distance (X2)
+Direct diff (PID)
+Spatial Pyramid Matching,Probability Distribution Distance (X2)
+Image Histogram,Perlin noise
+Direct diff
+Color-space transformation
+Probability Distribution Distance (X2)
+FAST,Template matching,Direct diff (raw)
+N/S
+Template matching,Direct diff (raw)
+Mathematical morphology
+Direct diff (raw),Perspective warp
+Template matching
+Color-space transformation,Mathematical morphology
+Normalized compression distance,Direct diff (MSE),SSIM
+Wavelets distance,CW-SSIM
+OCR
+Mathematical morphology,CNN Classification,Channel quantization
+Direct diff (PID),Channel quantization
+Template matching,SIFT,SURF
+Template matching,OCR,Morphology features
+Probability Distribution Distance (Cosine)
+Direct diff (raw),Direct diff (PID),Probability Distribution Distance (Euclidean)
+OCR,SIFT,2D Scaling

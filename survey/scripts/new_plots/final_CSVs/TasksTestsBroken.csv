@@ -1,0 +1,121 @@
+Citation,Tasks,Stage
+Caetano-2002-AAAI,Design,Design
+Coyette-2007-INTERACT,Design,Design
+Dixon-2011-CHI,Maintenance and Comprehension,Maintenance and Comprehension
+Seifert-2011-MobileHCI,Design,Design
+Natarajan-2018-MOBILESoft,Maintenance and Comprehension,Maintenance and Comprehension
+Huang-2019-CHI,Design,Design
+Alegroth-2013-ICST,Acceptance Testing,Testing
+Amalfitano-2014-WISE,Acceptance Testing,Testing
+Bajammal-2018-ICST,Acceptance Testing,Testing
+Chang-2010-CHI,Acceptance Testing,Testing
+Chen-2017-IUI,Acceptance Testing,Testing
+Choudhary-2010-ICSM,Acceptance Testing,Testing
+Choudhary-2012-ICST,Acceptance Testing,Testing
+Choudhary-2013-ICSE,Acceptance Testing,Testing
+He-2016-ICWS,Acceptance Testing,Testing
+Kirac-2018-JSS,Acceptance Testing,Testing
+Kuchta-2018-EMSE,Acceptance Testing,Testing
+Leotta-2018-STVR,Acceptance Testing,Testing
+Lin-2014-TSE,Acceptance Testing,Testing
+Mahajan-2014-ASE,Acceptance Testing,Testing
+Mahajan-2015-ICST,Acceptance Testing,Testing
+Mahajan-2016-ICST,Acceptance Testing,Testing
+Patric-2016-ASE,Acceptance Testing,Testing
+Selay-2014-DICTA,Acceptance Testing,Testing
+Semenenko-2013-ICSM,Acceptance Testing,Testing
+Xu-2018-TOIT,Acceptance Testing,Testing
+Zhang-2017-ASE,Acceptance Testing,Testing
+Deka-2016-UIST,Development,Development
+Deka-2017-UIST,Development,Development
+Nguyen-2015-ASE,Development,Development
+Reiss-2018-ASEj,Development,Development
+Bao-2017-EMSE,Development,Development
+Ponzanelli-2016-ICSE,Development,Development
+Reiss-2018-ASEj,Development,Development
+Deka-2016-UIST,Design,Design
+Deka-2017-UIST,Design,Design
+Burg-2015-UIST,Maintenance and Comprehension,Maintenance and Comprehension
+Bao-2017-EMSE,Design,Design
+Bao-2018-TSE,Development,Development
+Moran-2018-ICSE,Regression Testing,Testing
+Moran-2018-ICSE,Acceptance Testing,Testing
+Moran-2018-TSE,Development,Development
+Moran-2018-TSE,Design,Design
+Stocco-2018-FSE,Maintenance and Comprehension,Maintenance and Comprehension
+Tanno-2018-ICST,Regression Testing,Testing
+Bajammal-2018-ASE,Development,Development
+Moran-2018-ASE,Maintenance and Comprehension,Maintenance and Comprehension
+Xiao-2019-ICSE,Test Case Generation,Testing
+Deka-2016-UIST,Design,Design
+Deka-2017-UIST,Design,Design
+Wan-2017-STVR,Development,Development
+Li-2010-CHI,Design,Design
+Alegroth-2013-ICST,Regression Testing,Testing
+Amalfitano-2014-WISE,Regression Testing,Testing
+Bajammal-2018-ICST,Regression Testing,Testing
+Chang-2010-CHI,Regression Testing,Testing
+Chen-2017-IUI,Regression Testing,Testing
+Choudhary-2010-ICSM,Regression Testing,Testing
+Choudhary-2012-ICST,Regression Testing,Testing
+Choudhary-2013-ICSE,Regression Testing,Testing
+Delamaro-2011-STVR,Regression Testing,Testing
+He-2016-ICWS,Regression Testing,Testing
+Zhang-2017-ASE,Test Case Generation,Testing
+Hori-2015-SEKE,Regression Testing,Testing
+Kirac-2018-JSS,Regression Testing,Testing
+Kuchta-2018-EMSE,Regression Testing,Testing
+Leotta-2018-STVR,Regression Testing,Testing
+Lin-2014-TSE,Regression Testing,Testing
+Mahajan-2014-ASE,Regression Testing,Testing
+Mahajan-2015-ICST,Regression Testing,Testing
+Mahajan-2016-ICST,Regression Testing,Testing
+Patric-2016-ASE,Regression Testing,Testing
+Selay-2014-DICTA,Regression Testing,Testing
+Semenenko-2013-ICSM,Regression Testing,Testing
+Xu-2018-TOIT,Regression Testing,Testing
+Li-2010-CHI,Requirement Engineering,Requirement Engineering
+Scharf-2013-ICSE,Requirement Engineering,Requirement Engineering
+Bajammal-2018-ICST,Maintenance and Comprehension,Maintenance and Comprehension
+Deka-2016-UIST,Maintenance and Comprehension,Maintenance and Comprehension
+Deka-2017-UIST,Maintenance and Comprehension,Maintenance and Comprehension
+Nguyen-2015-ASE,Maintenance and Comprehension,Maintenance and Comprehension
+Kuchta-2018-EMSE,Root Cause Analysis,Testing
+Mahajan-2014-ASE,Root Cause Analysis,Testing
+Mahajan-2015-ICST,Root Cause Analysis,Testing
+Mahajan-2016-ICST,Root Cause Analysis,Testing
+Wan-2017-STVR,Root Cause Analysis,Testing
+Patric-2016-ASE,Test Case Generation,Testing
+Zhang-2017-ASE,Test Case Generation,Testing
+Feng-2016-ASE,Test Case Generation,Testing
+Leotta-2018-STVR,Maintenance and Comprehension,Maintenance and Comprehension
+Amalfitano-2014-WISE,Unit Testing,Testing
+Bajammal-2018-ICST,Unit Testing,Testing
+Choudhary-2010-ICSM,Unit Testing,Testing
+Choudhary-2012-ICST,Unit Testing,Testing
+Choudhary-2013-ICSE,Unit Testing,Testing
+Semenenko-2013-ICSM,Unit Testing,Testing
+Deka-2016-UIST,Usability Testing,Testing
+Deka-2017-UIST,Usability Testing,Testing
+Deka-2016-UIST,Design,Design
+Deka-2017-UIST,Design,Design
+Osman-2018-SEAA,Maintenance and Comprehension,Maintenance and Comprehension
+Fails-2003-CHI,Development,Development
+Zheng-2009-CHI,Usability Testing,Testing
+Givens-2013-ICSE,Maintenance and Comprehension,Maintenance and Comprehension
+Liang-2013-UIST,Regression Testing,Testing
+Liang-2013-UIST,Maintenance and Comprehension,Maintenance and Comprehension
+Bao-2015-ICSE,Development,Development
+Reinecke-2016-CHI,Design,Design
+Wu-2017-CSCW,Development,Development
+Chen-2018-ICSE,Development,Development
+Sun-2018-ICML,Development,Development
+Lim-2018-UIST,Maintenance and Comprehension,Maintenance and Comprehension
+Lim-2018-UIST,Maintenance and Comprehension,Maintenance and Comprehension
+Lim-2018-UIST,Maintenance and Comprehension,Maintenance and Comprehension
+Zhao-2019-ICSE,Maintenance and Comprehension,Maintenance and Comprehension
+Yu-2019-ASE,Regression Testing,Testing
+Yu-2019-ASE,Acceptance Testing,Testing
+Swearngin-2019-CHI,Design,Design
+Yuan-2020-CHI,Usability Testing,Testing
+Wu-2020-CHI,Design,Design

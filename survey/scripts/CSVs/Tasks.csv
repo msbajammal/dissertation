@@ -1,0 +1,95 @@
+﻿Citation,SE Task,SE Area
+Alegroth-2013-ICST,Acceptance\\nTesting,Testing
+Amalfitano-2014-WISE,Acceptance\\nTesting,Testing
+Bajammal-2018-ICST,Acceptance\\nTesting,Testing
+Chang-2010-CHI,Acceptance\\nTesting,Testing
+Chen-2017-IUI,Acceptance\\nTesting,Testing
+Choudhary-2010-ICSM,Acceptance\\nTesting,Testing
+Choudhary-2012-ICST,Acceptance\\nTesting,Testing
+Choudhary-2013-ICSE,Acceptance\\nTesting,Testing
+He-2016-ICWS,Acceptance\\nTesting,Testing
+Kirac-2018-JSS,Acceptance\\nTesting,Testing
+Kuchta-2018-EMSE,Acceptance\\nTesting,Testing
+Leotta-2018-STVR,Acceptance\\nTesting,Testing
+Lin-2014-TSE,Acceptance\\nTesting,Testing
+Mahajan-2014-ASE,Acceptance\\nTesting,Testing
+Mahajan-2015-ICST,Acceptance\\nTesting,Testing
+Mahajan-2016-ICST,Acceptance\\nTesting,Testing
+Patric-2016-ASE,Acceptance\\nTesting,Testing
+Selay-2014-DICTA,Acceptance\\nTesting,Testing
+Semenenko-2013-ICSM,Acceptance\\nTesting,Testing
+Xu-2018-TOIT,Acceptance\\nTesting,Testing
+Zhang-2017-ASE,Acceptance\\nTesting,Testing
+Deka-2016-UIST,Automated Code\\nGeneration,Development
+Deka-2017-UIST,Automated Code\\nGeneration,Development
+Nguyen-2015-ASE,Automated Code\\nGeneration,Development
+Reiss-2018-ASEj,Automated Code\\nGeneration,Development
+Bao-2017-EMSE,Code/Documentation\\nSearch,Development
+Ponzanelli-2016-ICSE,Code/Documentation\\nSearch,Development
+Reiss-2018-ASEj,Code/Documentation\\nSearch,Development
+Deka-2016-UIST,Design\\nSearch,Design
+Deka-2017-UIST,Design\\nSearch,Design
+Burg-2015-UIST,Feature\\nLocation,Maintenance and Comprehension
+Bao-2017-EMSE,Interaction\\nDesign,Design
+Bao-2018-TSE,Code/Documentation\\nSearch,Development
+Moran-2018-ICSE,Regression\\nTesting,Testing
+Moran-2018-ICSE,Acceptance\\nTesting,Testing
+Moran-2018-TSE,Automated Code\\nGeneration,Development
+Moran-2018-TSE,Prototyping,Design
+Stocco-2018-FSE,Test Suite\\nMaintenance,Maintenance and Comprehension
+Tanno-2018-ICST,Regression\\nTesting,Testing
+Bajammal-2018-ASE,Automated Code\\nGeneration,Development
+Moran-2018-ASE,Change\\nComprehension,Maintenance and Comprehension
+Xiao-2019-ICSE,Test Case\\nGeneration,Testing
+Deka-2016-UIST,Interaction\\nDesign,Design
+Deka-2017-UIST,Interaction\\nDesign,Design
+Wan-2017-STVR,Performance,Development
+Li-2010-CHI,Prototyping,Design
+Alegroth-2013-ICST,Regression\\nTesting,Testing
+Amalfitano-2014-WISE,Regression\\nTesting,Testing
+Bajammal-2018-ICST,Regression\\nTesting,Testing
+Chang-2010-CHI,Regression\\nTesting,Testing
+Chen-2017-IUI,Regression\\nTesting,Testing
+Choudhary-2010-ICSM,Regression\\nTesting,Testing
+Choudhary-2012-ICST,Regression\\nTesting,Testing
+Choudhary-2013-ICSE,Regression\\nTesting,Testing
+Delamaro-2011-STVR,Regression\\nTesting,Testing
+He-2016-ICWS,Regression\\nTesting,Testing
+Zhang-2017-ASE,Test Case\\nGeneration,Testing
+Hori-2015-SEKE,Regression\\nTesting,Testing
+Kirac-2018-JSS,Regression\\nTesting,Testing
+Kuchta-2018-EMSE,Regression\\nTesting,Testing
+Leotta-2018-STVR,Regression\\nTesting,Testing
+Lin-2014-TSE,Regression\\nTesting,Testing
+Mahajan-2014-ASE,Regression\\nTesting,Testing
+Mahajan-2015-ICST,Regression\\nTesting,Testing
+Mahajan-2016-ICST,Regression\\nTesting,Testing
+Patric-2016-ASE,Regression\\nTesting,Testing
+Selay-2014-DICTA,Regression\\nTesting,Testing
+Semenenko-2013-ICSM,Regression\\nTesting,Testing
+Xu-2018-TOIT,Regression\\nTesting,Testing
+Li-2010-CHI,Requirements\\nModelling,Requirement Engineering
+Scharf-2013-ICSE,Requirements\\nModelling,Requirement Engineering
+Bajammal-2018-ICST,Reverse\\nEngineering,Maintenance and Comprehension
+Deka-2016-UIST,Reverse\\nEngineering,Maintenance and Comprehension
+Deka-2017-UIST,Reverse\\nEngineering,Maintenance and Comprehension
+Nguyen-2015-ASE,Reverse\\nEngineering,Maintenance and Comprehension
+Kuchta-2018-EMSE,Root Cause\\nAnalysis,Testing
+Mahajan-2014-ASE,Root Cause\\nAnalysis,Testing
+Mahajan-2015-ICST,Root Cause\\nAnalysis,Testing
+Mahajan-2016-ICST,Root Cause\\nAnalysis,Testing
+Wan-2017-STVR,Root Cause\\nAnalysis,Testing
+Patric-2016-ASE,Test Case\\nGeneration,Testing
+Zhang-2017-ASE,Test Case\\nGeneration,Testing
+Feng-2016-ASE,Test Case\\nGeneration,Testing
+Leotta-2018-STVR,Test Suite\\nMaintenance,Maintenance and Comprehension
+Amalfitano-2014-WISE,Unit\\nTesting,Testing
+Bajammal-2018-ICST,Unit\\nTesting,Testing
+Choudhary-2010-ICSM,Unit\\nTesting,Testing
+Choudhary-2012-ICST,Unit\\nTesting,Testing
+Choudhary-2013-ICSE,Unit\\nTesting,Testing
+Semenenko-2013-ICSM,Unit\\nTesting,Testing
+Deka-2016-UIST,Usability\\nTesting,Testing
+Deka-2017-UIST,Usability\\nTesting,Testing
+Deka-2016-UIST,User Perception\\nPrediction,Design
+Deka-2017-UIST,User Perception\\nPrediction,Design

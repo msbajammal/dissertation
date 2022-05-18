@@ -1,0 +1,66 @@
+% !TEX root =  paper.tex
+
+\section{Introduction}
+\label{section:introduction}
+
+The development of user interfaces (UIs) for web apps is often a manual and time 
+consuming task.In a survey of more than 5,700 developers, 51\% reported working 
+on app UI design tasks on a daily basis~\cite{IDC:survey},
+more so than other development tasks, which they tended to perform every few days. 
+Another study also showed that an average of 48\% of the code size of software is 
+related to the user interface~\cite{myers:ui:survey}.
+
+A common workflow for creating web user interfaces 
+is \textit{mockup based design}~\cite{Newman:2000:SitemapsStoryboardsSpecifications, Ozenc:2010:SupportDesigners}.
+In this approach, a graphic designer creates a rough illustration of the anticipated UI design, called the \textit{mockup} or \textit{wireframe},
+usually through a graphic design software or a WYSIWYG editor. 
+This mockup is then exported to \html to be rendered in a browser.
+A web developer then examines the mockup and begins constructing web components for the app, which are nowadays implemented in one of the popular front-end frameworks such as \angular~\cite{Angular} or \react~\cite{React}.
+
+\renewcommand{\toolname}{\textsc{VizMod}\xspace}
+The main building block of UI design, and a cornerstone of these front-end frameworks, is the concept of  
+\textit{reusable components}~\cite{React-components, Angular-components},
+which are a set of APIs and coding practices allowing reuse and encapsulation of repeated patterns on the front-end.
+Reusable components help improve modularity and maintainability, make the code more testable, and effectively remove duplication,
+by offloading the task of creating repetitive patterns to the web browser at runtime. 
+Recent surveys show that using front-end frameworks is extensively popular among web developers. In one survey more than 92\% of around 28,000 surveyed web developers stated that they use a framework 
+rather than constructing UIs using pure \html~\cite{StateOfJS:WebPlatformTests}.
+As a result, creating reusable components is often an essential element of building an app's front-end.
+
+This component creation process can often be time consuming and tedious~\cite{thinking:in:components} in practice;  
+ it requires several manual steps,
+including the examination of the mockup, 
+checking potential elements that may or may not be suitable for conversion to components, 
+constructing a template for components that unifies repeated segments, 
+adding placeholders for variable content, and
+refactoring the code to replace instances with instantiated components~\cite{thinking:in:components}.
+
+To the best of our knowledge, there has been little to no automated support in creating these reusable web components from mockups. Existing techniques help to manage mockups themselves, but do not generate any components. For instance, one set of approaches~\cite{Sinha:2013:CompilingMockupsToFlexibleUIs, ramon2016layout} takes a mockup as input
+and converts its layout into a responsive code (e.g., through CSS) such that it is flexible  to maintain the layout on different
+display sizes. Others~\cite{mihalcea2014const_with_mockups} propose a tool that overlays the mockup as a transparency layer while implementing the UI, 
+and performs a snapping-like functionality that aligns against various parts of the mockup.
+
+In this chapter, we propose a technique, implemented in a tool, \toolname, to fill this gap by automatically generating reusable web components from mockups.
+Given a web mockup, our technique automatically identifies patterns on the UI,  refactors the \html code, and creates reusable components for popular front-end frameworks that are already familiar to developers such as \react or \angular. At the core of our approach is an unsupervised machine learning process for the detection of reusable UI patterns; we use features composed of a hybrid of information obtained from the Document Object Model (DOM) 
+as well as the visual analysis of the UI.
+
+We evaluate \toolname on \numberOfTemplates real-world web mockups by automatically identifying and transforming \totalNumberOfComponentInstances component instances 
+into \numberOfComponents components.    
+We also ask \numberOfParticipants experts to manually
+find patterns on the mockups
+and compare the output from our approach with the manually-identified patterns.
+Our approach is able to achieve \precision precision and \recall recall, on average, in correctly detecting reusable patterns in the UIs. 
+
+
+This chapter makes the following main contributions:
+\begin{itemize}
+	\item A novel approach for automatically generating web components (e.g., \react, \angular) from mockups, which is the first to address this issue, to the best of our knowledge.
+	\item An implementation of our approach, available in a tool called \toolname.
+	\item A qualitative and quantitative evaluation of \toolname in terms of its accuracy and reusability of the generated components. 
+	
+\end{itemize}
+
+
+ 
+
+

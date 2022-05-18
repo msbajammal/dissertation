@@ -1,0 +1,48 @@
+% !TEX root =  manuscript.tex
+\begin{table}%[t]
+    \caption{Open-source and industrial computer vision tools and libraries utilized by papers in the pool. }
+%     \andrea{This table was here in the previous revision as well. Highlight that the second part of the table are the industrial solutions the reviewer's asked for}}
+    \centering
+    %\small % bigger
+    %\small %smaller
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
+
+%\revised{0.48\textwidth}{
+    \begin{tabular}{p{2cm} p{6cm} p{3cm}}
+    \toprule
+    \textbf{Name} & \textbf{Scope} & \textbf{Utilized in} \\																
+    \midrule
+    
+    OpenCV %~\cite{lib:opencv} 
+            & provides data structures and algorithms for a wide variety of advanced computer vision processing 
+            & \cite{Tanno-2018-ICSTW, Givens-2013-ICSE, Bao-2015-ICSE, Zhao-2019-ICSE, Moran-TSE-2018, Xiao-2019-ICSE,  Bao-2017-EMSE,   Feng-2016-ASE,  Stocco-2018-FSE, Mahajan-2016-ICST, Nguyen-2015-ASE, Leotta-2018-STVR, Mahajan-2015-ICST, Chang-2010-CHI,Choudhary-2010-ICSM, Choudhary-2012-ICST, Choudhary-2013-ICSE, Lin-2014-TSE} \\[0.5ex]
+    Tesseract%~\cite{lib:abbyfinereader} 
+            & extensible and modular open-source optical character recognition (OCR) engine
+            & \cite{Nguyen-2015-ASE, Ponzanelli-2016-ICSE,Moran-TSE-2018,Yu-2019-ASE} \\[0.5ex]    
+    FineReader%~\cite{lib:abbyfinereader} 
+            & comprehensive OCR engine that includes relevant pre/post-processing steps and formats 
+            & \cite{Bao-2018-TSE} \\[0.5ex]
+    BoofCV%~\cite{lib:boofcv} 
+            & performance-oriented library that focuses on real-time processing 
+            & \cite{Ponzanelli-2016-ICSE} \\[0.5ex]
+    ImageMagick%~\cite{lib:imagemagick} 
+            & simple and easy to use tool and library for basic image transformations and analysis of color 
+            & \cite{Mahajan-2014-ASE} \\[0.5ex]
+
+    \midrule
+    ITK (Insight ToolKit)%~\cite{lib:itk} 
+    & specialized in image and coordinates matching, with comprehensive support for high-dimensional data & N/A \\[0.5ex]
+    VLFeat%~\cite{lib:vlfeat} 
+    & geared towards feature extraction, covering a large set of feature descriptors & N/A \\[0.5ex]
+    ImageJ%~\cite{lib:imagej} 
+    & a modular tool and library with an extensive number of plugins for various image analysis tasks & N/A \\[0.5ex]
+    Amazon Rekognition, Google Vision AI, Azure CV
+    %~\cite{lib:awscv, lib:googcv, lib:azurecv} 
+    & cloud-based tools with a large number of pretrained analysis and recognition models & N/A \\[0.5ex]
+    
+    \bottomrule
+    \end{tabular}
+%    }
+    \label{table:cvlibs}
+    \end{table}

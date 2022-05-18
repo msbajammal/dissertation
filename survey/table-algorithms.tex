@@ -1,0 +1,53 @@
+% !TEX root =  manuscript.tex
+
+%\begin{table*}[t!]
+\begin{sidewaystable}
+    \caption{Major computer vision algorithms used in the collected papers.}
+    \centering
+    %\renewcommand{\arraystretch}{1.2}
+	\setlength{\tabcolsep}{9pt}
+%	\revised{\textwidth}{
+    \begin{tabular}{l l p{5.5cm} p{3cm}}
+        \toprule
+        \textbf{Visual Technique}	& \textbf{Algorithm}	& \textbf{Description}		& \textbf{Utilized in} \\
+        \midrule
+        \multirow{9}{*}{Differential} 	
+        		& \multirow{2}{*}{Image diff}
+        													& A processing method whose output is a function of the 
+        														difference between a pair of input images (e.g. PID--Perceptual Image Differencing~\cite{ref:PID},
+																PHash--Perceptual Hashing~\cite{ref:PHash}).
+       	 		& \cite{Selay-2014-DICTA, Delamaro-2011-STVR, Deka-2016-UIST, Kuchta-2018-EMSE, Zhao-2019-ICSE,Liang-2013-UIST,Lim-2018-UIST,Bao-2015-ICSE,  Choudhary-2010-ICSM, Li-2010-CHI, Mahajan-2014-ASE, Burg-2015-UIST, Mahajan-2015-ICST, Ponzanelli-2016-ICSE, Mahajan-2016-ICST, Deka-2017-UIST, Bao-2017-EMSE, Chen-2017-IUI, Kirac-2018-JSS, Xu-2018-TOIT, Moran-ICSE-2018, Moran-2018-ASE}   \\
+		& & & \\
+        	 																				
+                & \multirow{2}{*}{Probability distribution distance}
+                                   							& Measuring the distance between \emph{distributions} of pixels 
+                                   							in a pair of images (e.g. $\chi^2$ distribution distance). 
+                & \cite{Choudhary-2010-ICSM, Choudhary-2012-ICST, Choudhary-2013-ICSE, Lin-2014-TSE,Hori-2015-SEKE, Feng-2016-ASE,He-2016-ICWS, Xu-2018-TOIT, bajammal2018generating, Moran-2018-ASE} \\
+                                   							
+		\midrule
+        \multirow{8}{*}{Transformational}
+        		& \multirow{2}{*}{Color/Spatial transformation}
+        													& Applying a transformation matrix to the spatial or color-space of one or more images, or transforming spatial regions into abstract data.
+				& \cite{Dixon-2010-CHI, Reiss-2018-ASEj,    Fails-2003-CHI, Zheng-2009-CHI,Givens-2013-ICSE,Bao-2015-ICSE,Reinecke-2016-CHI, Caetano-2002-AAAI, Coyette-2007-INTERACT, Dixon-2011-CHI, Seifert-2011-MobileHCI,  Natarajan-2018-MOBILESoft, Osman-2018-SEAA, Huang-2019-CHI, Li-2010-CHI, Patric-2016-ASE, Wan-2017-STVR, Kirac-2018-JSS, canvas_icst2018, Moran-TSE-2018, Moran-ICSE-2018, Xiao-2019-ICSE} \\
+
+		& & & \\
+                & \multirow{2}{*}{Optical character recognition}
+                                    						& Recognizing images of strings and converting them 
+                                    						into textual data.
+                & 
+%                \multirow{2}{*}{
+                	\cite{Yu-2019-ASE, Chang-2010-CHI, Amalfitano-2014-WISE, Nguyen-2015-ASE, Ponzanelli-2016-ICSE, Bao-2018-TSE, Tanno-2018-ICSTW, Xiao-2019-ICSE}
+%                } 
+            \\
+		\midrule				
+            	& Template matching		& Finding where an image is located within another image. 
+				& \cite{Alegroth-2013-ICST, Dixon-2010-CHI, Bao-2018-TSE, Givens-2013-ICSE, Yu-2019-ASE, Chang-2010-CHI, Semenenko-2013-ICSM, Lin-2014-TSE, Bao-2017-EMSE, Chen-2017-IUI, Leotta-2018-STVR, Stocco-2018-FSE, Tanno-2018-ICSTW} \\
+		Search							&   &   &   \\
+				& Machine learning		& Finding closest visual matches or categories based on learning patterns in visual data. 
+				& \cite{Scharf-2013-ICSE,  Landay-2001-IEEEComputer,  Deka-2016-UIST, Zhang-2017-ASE, Reiss-2018-ASEj,       Wu-2017-CSCW,Chen-2018-ICSE,Sun-2018-ICML,Zhao-2019-ICSE,Swearngin-2019-CHI,Yuan-2020-CHI,Wu-2020-CHI,Fails-2003-CHI} \\
+        \bottomrule
+    \end{tabular}
+		\label{tbl:cv-algorithms}
+%	}
+%\end{table*}
+\end{sidewaystable}

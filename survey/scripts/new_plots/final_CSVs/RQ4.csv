@@ -1,0 +1,192 @@
+Citation,Eval
+Fails-2003-CHI, Accuracy Measures 
+Chen-2018-ICSE, Accuracy Measures 
+Zhao-2019-ICSE, Accuracy Measures 
+Sun-2018-ICML, Accuracy Measures 
+Swearngin-2019-CHI, Accuracy Measures 
+Wu-2020-CHI, Accuracy Measures 
+Stocco-2018-FSE, Accuracy Measures 
+Tanno-2018-ICSTW, Accuracy Measures 
+Bajammal-2018-ASE, Accuracy Measures 
+Moran-2018-ASE, Accuracy Measures 
+Moran-ICSE-2018, Accuracy Measures 
+Moran-TSE-2018, Accuracy Measures 
+Natarajan-2018-MOBILESoft, Accuracy Measures 
+Osman-2018-SEAA, Accuracy Measures 
+Xiao-2019-ICSE, Accuracy Measures 
+Huang-2019-CHI, Accuracy Measures 
+Choudhary-2010-ICSM, Accuracy Measures 
+Choudhary-2012-ICST, Accuracy Measures 
+Choudhary-2013-ICSE, Accuracy Measures 
+Lin-2014-TSE, Accuracy Measures 
+Nguyen-2015-ASE, Accuracy Measures 
+Mahajan-2015-ICST, Accuracy Measures 
+Hori-2015-SEKE, Accuracy Measures 
+Feng-2016-ASE, Accuracy Measures 
+Patric-2016-ASE, Accuracy Measures 
+Wan-2017-STVR, Accuracy Measures 
+He-2016-ICWS, Accuracy Measures 
+Bao-2017-EMSE, Accuracy Measures 
+Chen-2017-IUI, Accuracy Measures 
+Reiss-2018-ASEj, Accuracy Measures 
+Kirac-2018-JSS, Accuracy Measures 
+Bajammal-2018-ICST, Accuracy Measures 
+Kuchta-2018-EMSE, Accuracy Measures 
+Xu-2018-TOIT, Accuracy Measures 
+Zheng-2009-CHI, Comparison against manual work
+Liang-2013-UIST, Comparison against manual work
+Yuan-2020-CHI, Comparison against manual work
+Tanno-2018-ICSTW, Comparison against manual work
+Bajammal-2018-ASE, Comparison against manual work
+Moran-2018-ASE, Comparison against manual work
+Moran-ICSE-2018, Comparison against manual work
+Moran-TSE-2018, Comparison against manual work
+Delamaro-2011-STVR, Comparison against manual work
+Li-2010-CHI, Comparison against manual work
+Li-2010-CHI, Comparison against manual work
+Semenenko-2013-ICSM, Comparison against manual work
+Mahajan-2015-ICST, Comparison against manual work
+Feng-2016-ASE, Comparison against manual work
+Chen-2017-IUI, Comparison against manual work
+Leotta-2018-STVR, Comparison against manual work
+Reiss-2018-ASEj, Comparison against manual work
+Liang-2013-UIST, Survey or manual validation of results
+Wu-2017-CSCW, Survey or manual validation of results
+Chen-2018-ICSE, Survey or manual validation of results
+Lim-2018-UIST, Survey or manual validation of results
+Yu-2019-ASE, Survey or manual validation of results
+Wu-2020-CHI, Survey or manual validation of results
+Bao-2018-TSE, Survey or manual validation of results
+Huang-2019-CHI, Survey or manual validation of results
+Caetano-2002-AAAI, Survey or manual validation of results
+Mahajan-2015-ICST, Survey or manual validation of results
+Hori-2015-SEKE, Survey or manual validation of results
+Mahajan-2016-ICST, Survey or manual validation of results
+Kuchta-2018-EMSE, Survey or manual validation of results
+Xu-2018-TOIT, Survey or manual validation of results
+Ponzanelli-2016-ICSE, Survey or manual validation of results
+Choudhary-2010-ICSM, Survey or manual validation of results
+Choudhary-2012-ICST, Survey or manual validation of results
+Choudhary-2013-ICSE, Survey or manual validation of results
+Fails-2003-CHI, Time comparison
+Chen-2018-ICSE, Time comparison
+Bao-2018-TSE, Time comparison
+Stocco-2018-FSE, Time comparison
+Tanno-2018-ICSTW, Time comparison
+Natarajan-2018-MOBILESoft, Time comparison
+Caetano-2002-AAAI, Time comparison
+Nguyen-2015-ASE, Time comparison
+Selay-2014-DICTA, Time comparison
+Hori-2015-SEKE, Time comparison
+Patric-2016-ASE, Time comparison
+Wan-2017-STVR, Time comparison
+Bao-2017-EMSE, Time comparison
+Reiss-2018-ASEj, Time comparison
+Kirac-2018-JSS, Time comparison
+Stocco-2018-FSE, Comparison against competitor approaches
+Coyette-2007-INTERACT, Comparison against competitor approaches
+Caetano-2002-AAAI, Comparison against competitor approaches
+Alegroth-2013-ICST, Comparison against competitor approaches
+Lin-2014-TSE, Comparison against competitor approaches
+Mahajan-2016-ICST, Comparison against competitor approaches
+Deka-2017-UIST, Comparison against competitor approaches
+He-2016-ICWS, Comparison against competitor approaches
+Zhang-2017-ASE, Comparison against competitor approaches
+Xu-2018-TOIT, Comparison against competitor approaches
+Nguyen-2015-ASE, Comparison to original design/output
+Patric-2016-ASE, Comparison to original design/output
+Leotta-2018-STVR, Comparison to original design/output
+Bajammal-2018-ICST, Comparison to original design/output
+Wan-2017-STVR, Comparison to original design/output
+Givens-2013-ICSE, Use case demonstration
+Bao-2015-ICSE, Use case demonstration
+Scharf-2013-ICSE, Use case demonstration
+Alegroth-2013-ICST, Use case demonstration
+Burg-2015-UIST, Use case demonstration
+Deka-2016-UIST, Use case demonstration
+Bao-2018-TSE, Industry context/feedback
+Huang-2019-CHI, Industry context/feedback
+Coyette-2007-INTERACT, Industry context/feedback
+Li-2010-CHI, Industry context/feedback
+Mahajan-2015-ICST, Industry context/feedback
+Amalfitano-2014-WISE, Industry context/feedback
+Kuchta-2018-EMSE, Industry context/feedback
+Mahajan-2014-ASE, Comparison with random/brute force
+Selay-2014-DICTA, Comparison with random/brute force
+Feng-2016-ASE, Comparison with random/brute force
+Patric-2016-ASE, Comparison with random/brute force
+Mahajan-2014-ASE, Seeded faults
+Mahajan-2015-ICST, Seeded faults
+Mahajan-2016-ICST, Seeded faults
+Patric-2016-ASE, Seeded faults
+Chang-2010-CHI, Differential comparisons
+Mahajan-2016-ICST, Differential comparisons
+Zhang-2017-ASE, Line/state coverage
+Deka-2017-UIST, Line/state coverage
+Lin-2014-TSE, Comparison on different physical devices
+Reinecke-2016-CHI, Comparison on different physical devices
+Fails-2003-CHI, Noise
+Bao-2015-ICSE, Noise
+Reinecke-2016-CHI, Noise
+Stocco-2018-FSE, Noise
+Tanno-2018-ICSTW, Noise
+Moran-2018-ASE, Noise
+Moran-ICSE-2018, Noise
+Moran-TSE-2018, Noise
+Natarajan-2018-MOBILESoft, Noise
+Huang-2019-CHI, Noise
+Caetano-2002-AAAI, Noise
+Coyette-2007-INTERACT, Noise
+Ponzanelli-2016-ICSE, Noise
+Reiss-2018-ASEj, Noise
+Bao-2017-EMSE, Noise
+Nguyen-2015-ASE, Noise
+Kuchta-2018-EMSE, Noise
+Leotta-2018-STVR, Noise
+Li-2010-CHI, Noise
+Lin-2014-TSE, Noise
+Kirac-2018-JSS, Noise
+Zheng-2009-CHI, Dynamicity
+Liang-2013-UIST, Dynamicity
+Lim-2018-UIST, Dynamicity
+Bao-2018-TSE, Dynamicity
+Choudhary-2010-ICSM, Dynamicity
+Patric-2016-ASE, Dynamicity
+Wan-2017-STVR, Dynamicity
+Bajammal-2018-ICST, Dynamicity
+Chang-2010-CHI, Dynamicity
+Fails-2003-CHI, Recognition
+Chen-2018-ICSE, Recognition
+Zhao-2019-ICSE, Recognition
+Sun-2018-ICML, Recognition
+Swearngin-2019-CHI, Recognition
+Wu-2020-CHI, Recognition
+Yuan-2020-CHI, Recognition
+Givens-2013-ICSE, Recognition
+Bao-2015-ICSE, Recognition
+Wu-2017-CSCW, Recognition
+Yu-2019-ASE, Recognition
+Zhang-2017-ASE, Recognition
+Bao-2018-TSE, Recognition
+Stocco-2018-FSE, Recognition
+Tanno-2018-ICSTW, Recognition
+Moran-2018-ASE, Recognition
+Moran-ICSE-2018, Recognition
+Moran-TSE-2018, Recognition
+Natarajan-2018-MOBILESoft, Recognition
+Osman-2018-SEAA, Recognition
+Xiao-2019-ICSE, Recognition
+Huang-2019-CHI, Recognition
+Caetano-2002-AAAI, Recognition
+Coyette-2007-INTERACT, Recognition
+Scharf-2013-ICSE, Recognition
+Bao-2017-EMSE, Recognition
+Kirac-2018-JSS, Recognition
+Kuchta-2018-EMSE, Recognition
+Lim-2018-UIST, Visibility
+Zhang-2017-ASE, Visibility
+Bao-2018-TSE, Visibility
+Chang-2010-CHI, Visibility
+Leotta-2018-STVR, Visibility
+Choudhary-2010-ICSM, Visibility
+Bao-2017-EMSE, Visibility

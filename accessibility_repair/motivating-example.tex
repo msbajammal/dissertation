@@ -1,0 +1,105 @@
+% !TEX root =  paper.tex
+
+\section{Background and Motivating Example} \label{sec:motivation}
+\Cref{fig:motivating-example} shows an example of
+an inaccessible web form. 
+By looking at the rendered form in \Cref{fig:motivating-example}b,
+a sighted user can understand 
+the structure and content of the web form and navigate their way through it.
+For instance, the user would recognize 
+that they can write down their name, email, and indicate if they 
+would like to receive daily emails. Most importantly, the user recognizes 
+which form fields are associated with the name or the email, for instance. 
+The collection of information we just described is referred to as form labeling. 
+It indicates what fields are present on the form and specifies the textual 
+label that describes what each field represents. 
+
+While this understanding of form content and labeling happens naturally when 
+sighted users look at the form, that is not the case for visually impaired 
+(i.e., non-sighted) users due to the absence of visual perception. 
+In \emph{inaccessible} forms, such as the one in \Cref{fig:motivating-example}, 
+the labeling is communicated exclusively through visual design. 
+This is because the HTML markup in \Cref{fig:motivating-example}a 
+is just a collection of \code{<div>}s, \code{<p>}s, and \code{<input>}s 
+that do not communicate any labeling associations to indicate what the various 
+elements represent. For instance, in \Cref{fig:motivating-example}a, there is no 
+piece of markup indicating what the \code{<textarea>} represents or means. 
+That is, there is no markup that describes to a non-sighted user 
+what information they are supposed to provide for that form field. 
+The form is therefore unusable in this case. 
+In contrast, sighted users understand 
+that the \code{<textarea>} is where they should write down their message, 
+or that the first text input is where they should provide their name. 
+They understood this from the visual design and layout 
+of the form. This implicit visual communication is natural for sighted 
+developers and users, but is unavailable for users who can 
+not have access to visual information due to disabilities. 
+Accordingly, the web form is deemed inaccessible since its markup does 
+not specify the labels of the form elements. 
+
+
+%\subsection{Accessible Rich Internet Applications}\label{subsec:aria-roles}
+%Non-sighted users rely on screen readers  
+%to parse a web page for them since they can not directly 
+%perceive the page. 
+%Screen readers are tools that speak out the various information, 
+%forms, and labels present on the page, and the non-sighted 
+%user would then select one of the 
+%options they heard. 
+%While a standard web browser simply renders the page as is and leaves 
+%it to the end user (i.e., a sighted user) to visually understand what the 
+%various elements mean or represent, 
+%screen readers require that the page markup explicitly 
+%indicates any semantic information (e.g., form labeling)  
+%in order to determine what information to convey audibly to the users. 
+%
+%The standard markup that is used by screen readers during their processing 
+%of pages is the World Wide Web Consortium's (W3C) \emph{Accessible Rich 
+%Internet Applications} (ARIA)~\cite{ARIA} standard. 
+%The ARIA standard specifies a set of markup attributes that 
+%should be included in the page's HTML to make it accessible to screen readers. 
+%Accordingly, when web developers incorporate these markups into their pages, 
+%the result is an accessible app that non-sighted users can use through their 
+%screen readers. 
+%
+%\subsection{Syntax checks}\label{subsec:syncheckers}
+%Existing accessibility testing tools~\cite{yesilada2019web,ukgov:audit:2018} 
+%are based on syntactic checking. 
+%They check the HTML against certain syntax rules. 
+%For instance, one common check is to assert that every \code{img} element 
+%has an \code{alt} text attribute for textual image descriptions. 
+%Another check asserts that \code{input} elements must not 
+%be descendant of \code{a}.
+%Another example is checking that every \code{ul} list 
+%element has a non-empty list item \code{li} child.  
+%In general, all syntax checks follow the same template: 
+%if certain syntax A is present, 
+%assert that syntax B is true. 
+%%Established accessibility guidelines (e.g., Web Content Accessibility Guidelines -- WCAG~\cite{WCAG}) 
+%%includes a number of such syntax rules as well as other guidelines. 
+% 
+%While syntax checks can be useful and simple 
+%assertions, and are easy to automate, 
+%syntax checks are not capable of addressing the more important, 
+%and more challenging, analysis that is 
+%required to infer and repair form labeling. 
+%To illustrate this, we revisit \Cref{fig:motivating-example}(b), 
+%where we can visually see that there is a text box form field 
+%whose label is `Message`. 
+%We perceived this labeling association by visually looking at 
+%the rendered form in (b).  
+%However, when we look at the markup in (a) we do not find that 
+%labeling expressed in the markup, 
+%and therefore conclude that the form is inaccessible.  
+%We now pause to reflect and observe that there is no possible 
+%syntactic check 
+%that can automate the conclusion we just reached. 
+%Checking that an attribute is missing is simple and readily 
+%automatable, but determining 
+%what values it should contain is difficult. 
+%The steps that we just walked through requires 
+%our own visual perception as sighted developers or users in 
+%order to reach the conclusion 
+%that there is a mismatch between the visually perceived labeling 
+%of the from, and the form's markup. 
+%

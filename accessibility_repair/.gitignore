@@ -1,0 +1,10 @@
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+paper.pdf
+IEEEtran_HOWTO.pdf
+*.synctex.gz

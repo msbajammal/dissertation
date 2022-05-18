@@ -1,0 +1,64 @@
+\section{Related Work}
+
+\header{Accessibility attribute checkers}
+Existing approaches related to accessibility testing focus on checking 
+syntactical attributes. 
+Eler et al.~\cite{eler2018automated} and Patil et al.~\cite{patil2016enhanced} 
+check for missing or wrong UI attributes in Android apps, 
+such as missing alternative 
+text attributes in images, or color attribute values 
+below a certain threshold. 
+Similar checks are also used in other tools such as 
+Google's Accessibility Scanner~\cite{goog_scanner}, 
+WAVE~\cite{wave_tool}, and ASLint~\cite{aslint_tool}.
+The aforementioned works focus on syntactic checks, 
+as opposed to the proposed approach in this work which 
+checks for high-level aspects such as page structure and semantic 
+landmarks, which are the most important ARIA roles that users 
+with disabilities rely on~\cite{2019users_survey}. 
+
+\header{Accessibility guidelines}
+The majority of existing work lies within the 
+accessibility research community 
+rather than software engineering.
+This research area involves studying certain categories of websites 
+(e.g., airline websites~\cite{agrawal2019evaluating,dominguez2018website}, 
+education portals~\cite{kimmons2017open}, 
+other categories~\cite{bhagat2019evaluation,ross2018examining,snider2020accessibility,serra2015accessibility}) or 
+certain platforms (e.g., Android~\cite{alshayban2020accessibility,park2014toward,yan2019current}), 
+and then focusing on \emph{manually observing} how non-sighted users 
+would use those apps or websites in order to 
+identify any patterns or trends in accessibility, with the 
+purpose of publishing improved accessibility guidelines. 
+Another line of work focuses on researching software development 
+\emph{best practices} and how do they impact the accessibility 
+of the end product. 
+For instance, Sanchez et al.~\cite{sanchez2017method} and 
+Bai et al.~\cite{bai2018categorization, bai2019methods} 
+examine development practices in 
+agile teams working on accessible software, 
+with the goal of proposing a guideline 
+for better agile practices. 
+Krainz et al.~\cite{krainz2018can} investigates 
+the impact of a model-driven approach to development 
+on the accessibility of the created product.
+None of the aforementioned works, however, is concerned 
+with developing an automated approach to test accessibility.
+Instead, their focus is researching best practices or guidelines for
+developers and designers.
+
+\header{Visual analysis}
+There exist a few techniques that analyze web applications from a visual perspective.
+Choudhary et al.~\cite{choudhary2012crosscheck} propose an approach that detects 
+cross-browser compatibility by examining visual differences between the same app 
+running in multiple browsers.
+Burg et al.~\cite{burg2015explaining} present a tool that helps developers 
+understand the behavior of front-end apps. It allows developers to specify 
+the element they are interested in, then tracks that element for any 
+visual changes to understand code behavior. 
+Bajammal et al.~\cite{bajammal2018generating} propose an approach to generate reusable web 
+components by analyzing design mockups.
+In contrast to our work, none of these works are related to accessibility. 
+
+
+
